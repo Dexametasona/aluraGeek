@@ -1,0 +1,117 @@
+.contact{
+  display: grid;
+  grid-template-columns:repeat(5, 1fr);
+  justify-content: center;
+  gap: 1rem;
+  background: linear-gradient(to  right bottom, changeOpacity($colSecondary, 1), changeOpacity($colThird, 1));
+  &>*{
+    grid-column: span 5;
+  }
+  &__logo{
+    display: flex;
+    flex-direction: column;
+    p{
+      text-align: justify;
+      color: $bgColor;
+      font-size: 0.8rem;
+      padding-inline: 1rem;
+    }
+    &__social{
+      display: flex;
+      justify-content: space-evenly;
+      padding-block: 0.5rem;
+      img{
+        @include transitionFast;
+        height: 2rem;
+        border-radius: 50%;
+        &:hover{
+          transform: scale(1.2);
+          box-shadow: 0 2px 5px -1px $colPrice;
+        }
+      }
+      
+    }
+  }
+
+  &__nav{
+    h3{
+      @include titleStyle;
+    }
+    &__list{
+      text-align: start;
+      padding-left: 1rem;
+      &>*{
+        margin-bottom: 0.5rem;
+        @include transitionFast;
+        &:hover{
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  &__info{
+    text-align: center;
+    h3{
+      @include titleStyle;
+      
+    }
+    &__list{  
+      text-align: start;
+      li{
+        margin-bottom: 0.5rem;
+      }
+      img{
+        height: 1rem;
+        padding-right: 0.5rem;
+      }
+    }
+  }
+
+  &__customService{
+    h3{
+      @include titleStyle;
+    }
+    &__list{
+      @extend .contact__nav__list;
+    }
+  }
+
+  &__formBox{
+    h3{
+      @include titleStyle;
+    }
+    &__form{
+      display: flex;
+      flex-direction: column;
+      padding-inline: 2rem;
+      &>*{
+        background-color: $bgColor;
+        border-radius: 0.5rem;
+        padding-left: 0.5rem;
+        margin-bottom: 0.5rem;
+        padding-block: 2px;
+        &::placeholder{
+          opacity: 0.5;
+          font-size: 0.7rem;
+        }
+        &:focus{
+          outline: solid 2px $colSecondary;
+        }
+      }
+      button{
+        @include btnStyle($bgColor, $colSecondary);
+        margin-inline: auto;
+        &:hover{
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  &__footer{
+    font-size: 0.6rem;
+    text-align: center;
+    color: $bgColor;
+  }
+}
