@@ -1,0 +1,17 @@
+/* variables */
+$bgColor:#F7F1E5;
+$colPrimary:#898121;
+$colSecondary:#E7B10A;
+$colThird:#862B0D;
+
+@function changeOpacity ($color, $opacity){
+  $red: red($color);
+  $green: green($color);
+  $blue: blue($color);
+  $new-color: rgba($red, $green, $blue, $opacity);
+  @return $new-color;
+};
+
+@mixin transitionFast(){
+  transition: all ease-in-out 0.3s;
+}

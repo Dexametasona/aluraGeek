@@ -1,0 +1,69 @@
+.menu{
+  display: flex;
+  padding-block: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+  img{
+    height: 1rem;
+  }
+  &__header{
+    display: flex;
+    align-items: center;
+    img{
+      height: 1.2rem;
+    }
+  }
+  &__nav{
+    display: flex;
+    &__list{
+      display: none;
+    }
+    &__search{
+      display: flex;
+      position: relative;
+      input{
+        width: auto;
+        font-size: 0.8rem;
+        background-color: white;
+        border-radius: 1rem;
+        padding-left: 0.5rem;
+        padding-block: 0.2rem;
+        &::placeholder{
+          opacity: 0.5;
+          font-size: 0.7rem;
+        }
+        &:focus{
+          outline: solid 1px $colSecondary; 
+        }
+      }
+      button{
+        position: absolute;
+        padding: 2px;
+        border-radius: 50%;
+        right: 0.2rem;
+        top: calc(50% - 10px);
+        @include transitionFast;
+        img{
+          display: block;
+        }
+        &:hover{
+          background-color: $bgColor;
+        }
+      }
+    }
+  }
+  &__login{
+    background-color: $colPrimary;
+    display: flex;
+    font-size: 0.7rem;
+    padding-inline: 0.5rem;
+    padding-block: 0.2rem;
+    border-radius: 1rem;
+    color: $bgColor;
+    @include transitionFast;
+    &:hover{
+      box-shadow: 0px 2px 1px 0px changeOpacity($colSecondary, 0.7);
+    }
+  }
+
+}
