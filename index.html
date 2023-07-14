@@ -10,6 +10,7 @@
   <title>AluraGeek</title>
 </head>
 <body>
+  <!-- ---------------------------------------------menu----- -->
   <section class="menu">
     <header class="menu__header">
       <img src="assets/aluraLogo.png" alt="alura-logo">
@@ -29,74 +30,139 @@
     </nav>
     <a class="menu__login" href="login.html"><img src="assets/user_search_fill.png" alt="login-icon">Login</a>
   </section>
+  <!-- ------------------------------------------------titulo -->
   <section class="title">
     <div class="title__slider">
-
+      <div class="title__slider__slide">
+        <img src="assets/rocketBanner.jpg" alt="rocket-banner">
+        <img src="assets/fidel-funko-gift.jpg" alt="castro-banner">
+        <img src="assets/lenin-funko slide.jpg" alt="lenin-slide">
+        <img src="assets/english.jpg" alt="anyone-icon">
+      </div>
+      <button onclick="slide(false)" class="title__slider__btnLeft"><img src="assets/arrow_left_fill.png" alt="arrowLeft-icon"></button>
+      <button onclick="slide(true)" class="title__slider__btnRight"><img src="assets/arrow_right_line.png" alt="arrowRight-icon"></button>
     </div>
     <div class="title__offer">
       <h2>Agosto promocional</h2>
-      <h3>Productos seleccionado con hasta 33% de descuento</h3>
-      <a href="#">Consolas</a>
+      <h3>Productos seleccionados con hasta 33% de descuento.</h3>
+      <a href="www.google.com">Consolas</a>
     </div>
   </section>
+  <!-- ---------------------------------------------stock products -->
   <section class="stock">
+    <h2>Productos destacados en stock</h2>
+    <h3>Funko politics</h3>
     <div class="stock__category">
       <div class="stock__category__card">
-        <img src="" alt="funko_profile">
-        <p>nombre del producto</p>
+        <div class="stock__category__card__photo">
+          <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
+          <img src="assets/fidel funko.jpg" alt="funko-background">
+        </div>
+        <p>Funko politics: Oldman-Castro F1001</p>
+        <h4>$100.00</h4>
         <div class="stock__category__card__actions">
-          <img src="" alt="favorite-icon">
-          <button>añadir al carrito</button>
-          <img src="" alt="detail-icon">
+          <img src="assets/heart-icon.png" alt="favorite-icon">
+          <button>Añadir al carrito</button>
+          <img src="assets/detail-icon.png" alt="detail-icon">
         </div>
       </div>
       <div class="stock__category__card">
-        <img src="" alt="funko_profile">
-        <p>nombre del producto</p>
+        <div class="stock__category__card__photo">
+          <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
+          <img src="assets/fidel funko.jpg" alt="funko-background">
+        </div>
+        <p>Funko politics: Oldman-Castro F1001</p>
+        <h4>$100.00</h4>
         <div class="stock__category__card__actions">
-          <img src="" alt="favorite-icon">
-          <button>añadir al carrito</button>
-          <img src="" alt="detail-icon">
+          <img src="assets/heart-icon.png" alt="favorite-icon">
+          <button>Añadir al carrito</button>
+          <img src="assets/detail-icon.png" alt="detail-icon">
         </div>
       </div>
       <div class="stock__category__card">
-        <img src="" alt="funko_profile">
-        <p>nombre del producto</p>
+        <div class="stock__category__card__photo">
+          <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
+          <img src="assets/fidel funko.jpg" alt="funko-background">
+        </div>
+        <p>Funko politics: Oldman-Castro F1001</p>
+        <h4>$100.00</h4>
         <div class="stock__category__card__actions">
-          <img src="" alt="favorite-icon">
-          <button>añadir al carrito</button>
-          <img src="" alt="detail-icon">
+          <img src="assets/heart-icon.png" alt="favorite-icon">
+          <button>Añadir al carrito</button>
+          <img src="assets/detail-icon.png" alt="detail-icon">
+        </div>
+      </div>
+    </div>
+    <h3>Funko funny </h3>
+    <div class="stock__category">
+      <div class="stock__category__card">
+        <div class="stock__category__card__photo">
+          <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
+          <img src="assets/fidel funko.jpg" alt="funko-background">
+        </div>
+        <p>Funko politics: Oldman-Castro F1001</p>
+        <h4>$100.00</h4>
+        <div class="stock__category__card__actions">
+          <img src="assets/heart-icon.png" alt="favorite-icon">
+          <button>Añadir al carrito</button>
+          <img src="assets/detail-icon.png" alt="detail-icon">
+        </div>
+      </div>
+      <div class="stock__category__card">
+        <div class="stock__category__card__photo">
+          <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
+          <img src="assets/fidel funko.jpg" alt="funko-background">
+        </div>
+        <p>Funko politics: Oldman-Castro F1001</p>
+        <h4>$100.00</h4>
+        <div class="stock__category__card__actions">
+          <img src="assets/heart-icon.png" alt="favorite-icon">
+          <button>Añadir al carrito</button>
+          <img src="assets/detail-icon.png" alt="detail-icon">
+        </div>
+      </div>
+      <div class="stock__category__card">
+        <div class="stock__category__card__photo">
+          <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
+          <img src="assets/fidel funko.jpg" alt="funko-background">
+        </div>
+        <p>Funko politics: Oldman-Castro F1001</p>
+        <h4>$100.00</h4>
+        <div class="stock__category__card__actions">
+          <img src="assets/heart-icon.png" alt="favorite-icon">
+          <button>Añadir al carrito</button>
+          <img src="assets/detail-icon.png" alt="detail-icon">
         </div>
       </div>
     </div>
   </section>
   <section class="info">
     <div class="info__card">
-      <img src="" alt="card-icon">
+      <img src="/assets/card-icon.png" alt="card-icon">
       <div class="info__card__description">
         <h3>Pagos r&aacute;pidos y seguros</h3>
         <p>Como nos importa tu comodidad y seguridad contamos distintos medios de pago como lo son: mercado pago y transferencias bancarias.</p>
       </div>
     </div>    
     <div class="info__card">
-      <img src="" alt="message-icon">
+      <img src="assets/chat-icon.png" alt="message-icon">
       <div class="info__card__description">
         <h3>Comentarios y opiniones</h3>
         <p>Nos importa tu opini&oacute;n, es por ello que para poder darte una mejor y eficiente atenci&oacute;n nos puedes escribir en todos nuestros canales afiliados.</p>
       </div>
     </div>    
     <div class="info__card">
-      <img src="" alt="card-icon">
+      <img src="assets/travel-icon.png" alt="card-icon">
       <div class="info__card__description">
         <h3>Despachos</h3>
         <p>Env&iacute;os r&aacute;pidos y seguros a la puerta de tu casa, con la seguridad de m&aacute;s alta calidad, dado que nos mantenemos en contacto con el courier.</p>
       </div>
     </div>    
     <div class="info__card">
-      <img src="" alt="card-icon">
+      <img src="assets/announce-icon.png" alt="card-icon">
       <div class="info__card__description">
         <h3>Novedades</h3>
-        <p>Descubre nuestras nuevas adiciones a la colecci&oacute;n de juguetes de colecci&oacute;n! Estamos emocionados de presentarte los &uacute;ltimos lanzamientos y las piezas m&aacute;s exclusivas. Mantente al d&iacute;a con las &uacute;ltimas tendencias y ampl&iacute;a tu colecci&oacute;n con nuestras emocionantes incorporaciones.</p>
+        <p>Mantente al d&iacute;a con las &uacute;ltimas tendencias y ampl&iacute;a tu colecci&oacute;n con nuestras emocionantes incorporaciones.</p>
       </div>
     </div>    
   </section>
@@ -151,5 +217,6 @@
       Eccomerce CRUD Desarrollado por un Alexander Machicado Gomez-2023.
     </footer>
   </section>
+  <script src="animation.js"></script>
 </body>
 </html>

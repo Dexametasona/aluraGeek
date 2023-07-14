@@ -1,8 +1,13 @@
 .menu{
   display: flex;
-  padding-block: 1rem;
+  padding-block: 0.5rem;
   justify-content: space-evenly;
   align-items: center;
+  box-shadow: 0 2px 2px 1px changeOpacity($colThird, 0.5);
+  background-color: $bgColor;
+  position: sticky;
+  z-index: 4;
+  top: 0;
   img{
     height: 1rem;
   }
@@ -53,14 +58,8 @@
     }
   }
   &__login{
-    background-color: $colPrimary;
     display: flex;
-    font-size: 0.7rem;
-    padding-inline: 0.5rem;
-    padding-block: 0.2rem;
-    border-radius: 1rem;
-    color: $bgColor;
-    @include transitionFast;
+    @include btnStyle($bgColor, $colPrimary);
     &:hover{
       box-shadow: 0px 2px 1px 0px changeOpacity($colSecondary, 0.7);
     }

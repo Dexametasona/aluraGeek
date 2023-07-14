@@ -3,6 +3,7 @@ $bgColor:#F7F1E5;
 $colPrimary:#898121;
 $colSecondary:#E7B10A;
 $colThird:#862B0D;
+$colPrice:#694F04;
 
 @function changeOpacity ($color, $opacity){
   $red: red($color);
@@ -14,4 +15,16 @@ $colThird:#862B0D;
 
 @mixin transitionFast(){
   transition: all ease-in-out 0.3s;
-}
+};
+@mixin transitionSlow(){
+  transition: all ease-in-out 0.7s;
+};
+@mixin btnStyle($fontCol, $bgCol){
+  background-color: $bgCol;
+  font-size: 0.7rem;
+  padding-inline: 0.5rem;
+  padding-block: 0.2rem;
+  border-radius: 1rem;
+  color: $fontCol;
+  @include transitionFast;
+};
