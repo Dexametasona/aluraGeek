@@ -1,44 +1,42 @@
 .stock{
   padding-block: 1rem;
   h2, h3{
-    text-align: center;
-    margin-bottom: 1rem;
-    font-weight: bolder;
+    @include titleStyle;
     color: $colPrice;
+    font-size: 1.5rem;
   }
   h3{
     font-weight: lighter;
   }
   &__category{
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     gap: 0.5rem;
     margin-bottom: 1rem;
     &__card{
-      grid-column: span 3;
+      grid-column: span 6;
       text-align: center;
       border-radius: 0.2rem;
       padding: 5px;
       font-size: 0.7rem;
       color: $colPrimary;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
       @include transitionFast;
-      h4{
-        color: $colPrice;
-        font-weight: bolder;
-      }
       &__photo{
         position: relative;
         width: 100%;
-        height: 100px;
         overflow: hidden;
+        margin-bottom: 1rem;
         img{
-          position: absolute;
-          top: 0;
-          left: 0;
           @include transitionSlow;
         }
         &__first{
+          position: absolute;
           z-index: 2;
+          top: 0;
+          left: 0;
         }
         &:hover>&__first{
           opacity: 0;
@@ -47,17 +45,37 @@
           transform: scale(1.2);
         }
       }  
+      h4{
+        color: $colPrice;
+        font-weight: bolder;
+      }
       &__actions{
         display: flex;
         height: 1.5rem;
         justify-content: space-evenly;
         align-items: center;
+        margin-top: 1rem;
         button{
           @include btnStyle($bgColor, $colPrimary);
           font-size: 0.5rem;
+          &:hover{
+            background-color: changeOpacity($colPrimary, 0.5);
+            transform: translateY(-4px);
+          }
         }
         img{
           height: 1rem;
+          border-radius: 50%;
+          cursor: pointer;
+          @include transitionFast;
+          &:hover{
+            background-color: $colPrice;
+            box-shadow: 0 1px 4px -2px black;
+            transform: translateY(-4px);
+          }
+          &:first-child:hover{
+            background-color: $colThird;
+          }
         }
         &>*{
           display: none;
@@ -67,6 +85,7 @@
         box-shadow: 0px 2px 2px -1px black;
         background-color: $colSecondary;
         color: $bgColor;
+        transform: translateY(-2px);
       }
       &:hover>&__actions>*{
         display: block;

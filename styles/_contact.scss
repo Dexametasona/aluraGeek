@@ -1,11 +1,12 @@
 .contact{
+  // position: relative;
   display: grid;
-  grid-template-columns:repeat(5, 1fr);
+  grid-template-columns:repeat(12, 1fr);
   justify-content: center;
   gap: 1rem;
   background: linear-gradient(to  right bottom, changeOpacity($colSecondary, 1), changeOpacity($colThird, 1));
   &>*{
-    grid-column: span 5;
+    grid-column: span 12;
   }
   &__logo{
     display: flex;
@@ -26,7 +27,7 @@
         border-radius: 50%;
         &:hover{
           transform: scale(1.2);
-          box-shadow: 0 2px 5px -1px $colPrice;
+          box-shadow: 0 2px 5px 0px $colPrice;
         }
       }
       
@@ -60,6 +61,10 @@
       text-align: start;
       li{
         margin-bottom: 0.5rem;
+        @include transitionFast;
+        &:hover{
+          transform: translateY(-2px);
+        }
       }
       img{
         height: 1rem;
@@ -113,5 +118,22 @@
     font-size: 0.6rem;
     text-align: center;
     color: $bgColor;
+  }
+}
+.btnUp{
+  position: fixed;
+  bottom: 1rem;
+  right: -9vw;
+  a{
+    padding: 2px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    @include transitionFast;
+    display: block;
+    &:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 4px 5px 2px rgba(0, 0, 0, 0.479);
+    }
   }
 }

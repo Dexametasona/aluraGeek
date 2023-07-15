@@ -1,0 +1,211 @@
+@media screen and (min-width:470px){
+  .contact{
+    &__logo{
+      width: 70%;
+      justify-self: center;
+    }
+  }
+}
+@media screen and (min-width:560px) {
+  .stock__category__card{
+    grid-column: span 4;  
+  }
+  .info__card{
+    grid-column: span 2;
+  }
+  .contact{
+    &__logo{
+      width: 50%;
+    }
+    &__nav, &__info, &__customService, &__formBox{
+      grid-column: span 6;      
+    }
+  }
+}
+@media screen and (min-width:730px) {
+  .menu{
+    &__sandwich{
+      display: none;
+    }
+    &__nav{
+      flex-grow: 1;
+      padding-inline: 1rem;
+      &__list{
+        position: static;
+        height: auto;
+        width: auto;
+        flex-grow: 1;
+        ul{
+          display: flex;
+          flex-basis: auto;
+          flex-grow: 1;
+          justify-content: space-evenly;
+          li{
+            box-shadow: none;
+            padding: 0;
+            a{
+              display: flex;
+              img{
+                height: 1.1rem;
+                margin: 0;
+              }
+            }
+            &:nth-child(1){
+              display: none;
+            }
+          }
+        }
+        div{
+          display: none;
+        }
+      }
+    }
+  }
+  .title{
+    &__slider{
+      height: 300px;
+      &__slide>img{
+        height: 300px;
+      }
+    }
+    &__offer{
+      h2{
+        font-size: 2rem;
+      }
+      h3{
+        font-size: 1rem;
+      }
+      
+    }
+    .stock__category__card{
+      grid-column: span 3;
+      font-size: 1rem;
+    }
+  }
+}
+@media screen and (min-width:1000px) {
+  .menu{
+    padding-inline: 1rem;
+    &>*{
+      padding-block: 1rem;
+    }
+    &__header{
+      padding: 0;
+      img{
+        height: 4rem;
+      }
+    }
+    &__nav{
+      &__search{
+        flex-basis: 40%;
+        input{
+          font-size: 1rem;
+          width: 100%;
+          &::placeholder{
+            padding-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  .title{
+    &__slider{
+      height: 400px;
+      &__slide>img{
+        height: 400px;
+      }
+    }
+    &__offer{
+      &>*{
+        margin-bottom: 0.5rem;
+      }
+      h2{
+        font-size: 3rem;
+      }
+      h3, a{
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .contact{
+    padding-block: 1rem;
+    &__logo{
+      width: auto;
+    }
+    &>*:not(:last-child){
+      grid-column: span 4;
+      h3{
+        font-size: 1rem;
+      }      
+    }
+  }
+}
+@media screen and (min-width:1200px) {
+  .promo{
+    font-size: 1.2rem;
+  }
+  .menu{
+    &__nav{
+      padding-block: 0;
+      &__list>ul>li{
+        padding-block: 1rem;
+        padding-inline: 1rem;
+        &:hover{
+          box-shadow: 0 5px 3px -1px rgba(0, 0, 0, 0.5);
+          transform: translateY(-2px);
+        }
+      }
+      &__search{
+        flex-basis: 50%;
+        input{
+          border-radius: 2rem;
+          font-size: 1rem;
+          width: 100%;
+          &::placeholder{
+            font-size: 1rem;
+          }
+        }
+        button{
+          top:calc(50% - 1rem);
+          img{
+            height: 2rem;
+          }
+        }
+      }
+    }
+  }
+  .title__slider{
+    &__btnLeft{
+    width: 96px;
+    }
+  }
+  .stock__category__card{
+    grid-column: span 2;
+    font-size: 1.5rem;
+    &__actions>img{
+      height: 1.5rem;
+    }
+    &:hover{
+      transform: translateY(-4px);
+      box-shadow: 0px 3px 5px -1px black;
+    }
+  }
+  .info__card{
+    grid-column: span 1;
+  }
+  .contact{
+    padding-inline: 1rem;
+    &__logo{
+      grid-column: span 3 !important;
+    }
+    &__nav, &__customService, &__formBox{
+      grid-column: span 2 !important;
+    }
+    &__info{
+      grid-column: span 3 !important;
+    }
+    &__formBox__form{
+      padding-inline: 0;
+    }
+  }
+}

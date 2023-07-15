@@ -1,16 +1,28 @@
+.promo{
+  background:linear-gradient(to right, $colSecondary, $colThird);
+  padding-inline: 0.5rem;
+  font-size: 0.8rem;
+}
 .menu{
   display: flex;
-  padding-block: 0.5rem;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-  box-shadow: 0 2px 2px 1px changeOpacity($colThird, 0.5);
   background-color: $bgColor;
-  position: sticky;
-  z-index: 4;
-  top: 0;
+  padding-inline: 0;
+  padding-block: 0.5rem;
+  @include transitionFast;
   img{
     height: 1rem;
   }
+/* ------------------------------------sandwich button */
+  &__sandwich{
+    background-color: $colPrimary;
+    border-radius: 2px;
+    img{
+      display: block;
+    }
+  }
+  /* --------------------------------------header logo */
   &__header{
     display: flex;
     align-items: center;
@@ -18,10 +30,47 @@
       height: 1.2rem;
     }
   }
+  /* -------------------------------------------navBar */
   &__nav{
     display: flex;
     &__list{
-      display: none;
+      // display: none;
+      position: absolute;
+      left: -100%;
+      top: 0%;
+      height: 100vh;
+      width: 100vw;
+      z-index: 6;
+      display: flex;
+      @include transitionFast;
+      ul{
+        flex-basis: 75%;
+        background-color: $bgColor;
+        li{
+          padding-bottom: 1rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+          color: $colSecondary;
+          box-shadow: 0 5px 3px -3px rgba(0, 0, 0, 0.3);
+          @include transitionFast;
+          img{
+            margin-right: 0.5rem;
+          }
+          &:nth-child(1){
+            padding-block: 0;
+            img{
+              height: 2rem;
+            }
+          }
+          &:hover{
+            box-shadow: 0 5px 3px -1px rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+      div{
+        background-color: rgba(0, 0, 0, 0.25);
+        flex-basis: 25%;
+      }
     }
     &__search{
       display: flex;
@@ -47,6 +96,7 @@
         border-radius: 50%;
         right: 0.2rem;
         top: calc(50% - 10px);
+        cursor: pointer;
         @include transitionFast;
         img{
           display: block;
@@ -57,12 +107,23 @@
       }
     }
   }
+  /* ---------------------------------------------login button */
   &__login{
     display: flex;
     @include btnStyle($bgColor, $colPrimary);
     &:hover{
-      box-shadow: 0px 2px 1px 0px changeOpacity($colSecondary, 0.7);
+      box-shadow: 0px 2px 1px 3px changeOpacity($colSecondary, 0.7);
     }
   }
 
+}
+/* ---------------------------------------stilo para funciones */
+.stickyStyle{
+  box-shadow: 0 2px 2px 1px changeOpacity($colThird, 0.5);
+  position: sticky;
+  z-index: 4;
+  top: 0;
+}
+.menuIn{
+  left: 0;
 }

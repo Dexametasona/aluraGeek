@@ -10,18 +10,28 @@
   <title>AluraGeek</title>
 </head>
 <body>
+  <section class="promo" id="alura">
+    Env&iacute;os gratis a Narnia.
+  </section>
   <!-- ---------------------------------------------menu----- -->
   <section class="menu">
+    <button class="menu__sandwich" onclick="menuSlide()">
+      <img src="assets/menu-icon.png" alt="menu-icon">
+    </button>
     <header class="menu__header">
       <img src="assets/aluraLogo.png" alt="alura-logo">
     </header>
     <nav class="menu__nav">
-      <ul class="menu__nav__list">
-        <li><a href="products.html"><img src="assets/boxIcon.png" alt="box-icon">Productos</a></li>
-        <li><a href="index.html"><img src="assets/homeIcon.png" alt="home-icon">Home</a></li>
-        <li><a href="about.html"><img src="assets/phoneIcon.png" alt="phone-icon">Contacto</a></li>
-        <li><a href="about.html"><img src="assets/groupIcon.png" alt="group-icon">Nosotros</a></li>
-      </ul>
+      <div class="menu__nav__list">        
+        <ul>
+          <li><img src="assets/aluraLogo.png" alt="alura-logo"></li>
+          <li><a onclick="menuSlide()" href="index.html"><img src="assets/homeIcon.png" alt="home-icon">Home</a></li>
+          <li><a onclick="menuSlide()" href="products.html"><img src="assets/boxIcon.png" alt="box-icon">Productos</a></li>
+          <li><a onclick="menuSlide()" href="about.html"><img src="assets/groupIcon.png" alt="group-icon">Nosotros</a></li>
+          <li><a onclick="menuSlide()" href="about.html"><img src="assets/phoneIcon.png" alt="phone-icon">Contacto</a></li>
+        </ul>
+        <div onclick="menuSlide()"></div>
+      </div>
       <form class="menu__nav__search" method="GET">
         <input type="text" placeholder="¿Que deseas buscar?">
         <button type="submit"><img src="assets/desktopSearch-icon.png" alt="search-icon">
@@ -56,7 +66,7 @@
       <div class="stock__category__card">
         <div class="stock__category__card__photo">
           <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
-          <img src="assets/fidel funko.jpg" alt="funko-background">
+          <img src="assets/karlMarxFunko.jpg" alt="funko-background">
         </div>
         <p>Funko politics: Oldman-Castro F1001</p>
         <h4>$100.00</h4>
@@ -69,7 +79,7 @@
       <div class="stock__category__card">
         <div class="stock__category__card__photo">
           <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
-          <img src="assets/fidel funko.jpg" alt="funko-background">
+          <img src="assets/karlMarxFunko.jpg" alt="funko-background">
         </div>
         <p>Funko politics: Oldman-Castro F1001</p>
         <h4>$100.00</h4>
@@ -82,7 +92,46 @@
       <div class="stock__category__card">
         <div class="stock__category__card__photo">
           <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
-          <img src="assets/fidel funko.jpg" alt="funko-background">
+          <img src="assets/karlMarxFunko.jpg" alt="funko-background">
+        </div>
+        <p>Funko politics: Oldman-Castro F1001</p>
+        <h4>$100.00</h4>
+        <div class="stock__category__card__actions">
+          <img src="assets/heart-icon.png" alt="favorite-icon">
+          <button>Añadir al carrito</button>
+          <img src="assets/detail-icon.png" alt="detail-icon">
+        </div>
+      </div>
+      <div class="stock__category__card">
+        <div class="stock__category__card__photo">
+          <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
+          <img src="assets/karlMarxFunko.jpg" alt="funko-background">
+        </div>
+        <p>Funko politics: Oldman-Castro F1001</p>
+        <h4>$100.00</h4>
+        <div class="stock__category__card__actions">
+          <img src="assets/heart-icon.png" alt="favorite-icon">
+          <button>Añadir al carrito</button>
+          <img src="assets/detail-icon.png" alt="detail-icon">
+        </div>
+      </div>
+      <div class="stock__category__card">
+        <div class="stock__category__card__photo">
+          <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
+          <img src="assets/karlMarxFunko.jpg" alt="funko-background">
+        </div>
+        <p>Funko politics: Oldman-Castro F1001</p>
+        <h4>$100.00</h4>
+        <div class="stock__category__card__actions">
+          <img src="assets/heart-icon.png" alt="favorite-icon">
+          <button>Añadir al carrito</button>
+          <img src="assets/detail-icon.png" alt="detail-icon">
+        </div>
+      </div>
+      <div class="stock__category__card">
+        <div class="stock__category__card__photo">
+          <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
+          <img src="assets/karlMarxFunko.jpg" alt="funko-background">
         </div>
         <p>Funko politics: Oldman-Castro F1001</p>
         <h4>$100.00</h4>
@@ -98,7 +147,7 @@
       <div class="stock__category__card">
         <div class="stock__category__card__photo">
           <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
-          <img src="assets/fidel funko.jpg" alt="funko-background">
+          <img src="assets/karlMarxFunko.jpg" alt="funko-background">
         </div>
         <p>Funko politics: Oldman-Castro F1001</p>
         <h4>$100.00</h4>
@@ -111,7 +160,7 @@
       <div class="stock__category__card">
         <div class="stock__category__card__photo">
           <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
-          <img src="assets/fidel funko.jpg" alt="funko-background">
+          <img src="assets/karlMarxFunko.jpg" alt="funko-background">
         </div>
         <p>Funko politics: Oldman-Castro F1001</p>
         <h4>$100.00</h4>
@@ -124,7 +173,46 @@
       <div class="stock__category__card">
         <div class="stock__category__card__photo">
           <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
-          <img src="assets/fidel funko.jpg" alt="funko-background">
+          <img src="assets/karlMarxFunko.jpg" alt="funko-background">
+        </div>
+        <p>Funko politics: Oldman-Castro F1001</p>
+        <h4>$100.00</h4>
+        <div class="stock__category__card__actions">
+          <img src="assets/heart-icon.png" alt="favorite-icon">
+          <button>Añadir al carrito</button>
+          <img src="assets/detail-icon.png" alt="detail-icon">
+        </div>
+      </div>
+      <div class="stock__category__card">
+        <div class="stock__category__card__photo">
+          <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
+          <img src="assets/karlMarxFunko.jpg" alt="funko-background">
+        </div>
+        <p>Funko politics: Oldman-Castro F1001</p>
+        <h4>$100.00</h4>
+        <div class="stock__category__card__actions">
+          <img src="assets/heart-icon.png" alt="favorite-icon">
+          <button>Añadir al carrito</button>
+          <img src="assets/detail-icon.png" alt="detail-icon">
+        </div>
+      </div>
+      <div class="stock__category__card">
+        <div class="stock__category__card__photo">
+          <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
+          <img src="assets/karlMarxFunko.jpg" alt="funko-background">
+        </div>
+        <p>Funko politics: Oldman-Castro F1001</p>
+        <h4>$100.00</h4>
+        <div class="stock__category__card__actions">
+          <img src="assets/heart-icon.png" alt="favorite-icon">
+          <button>Añadir al carrito</button>
+          <img src="assets/detail-icon.png" alt="detail-icon">
+        </div>
+      </div>
+      <div class="stock__category__card">
+        <div class="stock__category__card__photo">
+          <img class="stock__category__card__photo__first" src="assets/castroFunko.jpg" alt="funko_profile">
+          <img src="assets/karlMarxFunko.jpg" alt="funko-background">
         </div>
         <p>Funko politics: Oldman-Castro F1001</p>
         <h4>$100.00</h4>
@@ -138,6 +226,7 @@
   </section>
   <!-- --------------------------------------info -->
   <section class="info">
+    <h2>Tienda</h2>
     <div class="info__card">
       <img src="/assets/card-icon.png" alt="card-icon">
       <div class="info__card__description">
@@ -173,11 +262,11 @@
       <img src="assets/aluraLogo.png" alt="alura-logo">
       <p>Somos una tienda en l&iacute;nea apasionada por los Funkos y dedicada a proporcionar a los coleccionistas una experiencia &uacute;nica.</p>
       <div class="contact__logo__social">
-        <img src="assets/face-icon.png" alt="facebook-icon">
-        <img src="assets/whatsapp_icon.png" alt="whatsapp-icon">
-        <img src="assets/insta_icon.png" alt="instagram-icon">
-        <img src="assets/telegram-icon.png" alt="telegram-icon">
-        <img src="assets/twitter-icon.png" alt="twitter-icon">
+        <a href="#"><img src="assets/face-icon.png" alt="facebook-icon"></a>
+        <a href="#"><img src="assets/whatsapp_icon.png" alt="whatsapp-icon"></a>
+        <a href="#"><img src="assets/insta_icon.png" alt="instagram-icon"></a>
+        <a href="#"><img src="assets/telegram-icon.png" alt="telegram-icon"></a>
+        <a href="#"><img src="assets/twitter-icon.png" alt="twitter-icon"></a>
       </div>
     </div>
     <nav class="contact__nav">
@@ -208,7 +297,7 @@
       </ul>
     </div>
     <div class="contact__formBox">
-      <h3>Contactanos</h3>
+      <h3>Cont&aacute;ctanos</h3>
       <form class="contact__formBox__form" method="get">
         <input type="email" placeholder="Email" required>
         <textarea name="message" id="message" rows="5" required placeholder="Escribe tu mensaje"></textarea>
@@ -219,6 +308,11 @@
       Eccomerce CRUD Desarrollado por un Alexander Machicado Gomez-2023.
     </footer>
   </section>
+  <section class="btnUp">
+    <a href="#alura">
+      <img src="assets/phoneIcon.png" alt="up-icon">
+    </a>
+  </sectio>
   <script src="animation.js"></script>
 </body>
 </html>

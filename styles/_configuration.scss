@@ -26,7 +26,11 @@ $colPrice:#694F04;
   padding-block: 0.2rem;
   border-radius: 1rem;
   color: $fontCol;
+  cursor: pointer;
   @include transitionFast;
+  @media screen and (min-width:1000px) {
+    font-size: 1rem;
+  }
 };
 
 @mixin titleStyle(){
@@ -34,4 +38,8 @@ $colPrice:#694F04;
   font-weight: bolder;
   margin-bottom: 1rem;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+
+  @media screen and (min-width:1000px) {
+    font-size: 2.5rem;
+  }
 }
