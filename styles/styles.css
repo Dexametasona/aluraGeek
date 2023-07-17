@@ -166,11 +166,11 @@
 }
 .title__slider__slide {
   transition: all ease-in-out 0.7s;
-  width: 400%;
+  width: 360vw;
   display: flex;
 }
 .title__slider__slide img {
-  width: 100%;
+  width: 90vw;
   height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -560,6 +560,9 @@
   transition: all ease-in-out 0.3s;
   display: block;
 }
+.btnUp a img {
+  height: 2rem;
+}
 .btnUp a:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 5px 2px rgba(0, 0, 0, 0.479);
@@ -759,6 +762,120 @@
   }
   .contact__formBox__form {
     padding-inline: 0;
+  }
+}
+.access {
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.access__login h2, .access__regist h2 {
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  color: #898121;
+}
+@media screen and (min-width: 1000px) {
+  .access__login h2, .access__regist h2 {
+    font-size: 2.5rem;
+  }
+}
+.access__login__form, .access__regist__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.access__login__form__input, .access__regist__form__input {
+  position: relative;
+  border-radius: 1rem;
+}
+.access__login__form__input > *, .access__regist__form__input > * {
+  transition: all ease-in-out 0.3s;
+}
+.access__login__form__input label, .access__regist__form__input label {
+  color: #E7B10A;
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+  opacity: 0.5;
+}
+.access__login__form__input input, .access__regist__form__input input {
+  padding-top: 1rem;
+  width: 100%;
+  padding-left: 0.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  outline: solid 2px transparent;
+}
+.access__login__form__input input:focus, .access__regist__form__input input:focus {
+  outline: solid 2px #898121;
+}
+.access__login__form__input input:-webkit-autofill, .access__regist__form__input input:-webkit-autofill, .access__login__form__input input:-webkit-autofill:hover, .access__login__form__input input:-webkit-autofill:focus, .access__login__form__input input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.access__login__form__btn, .access__regist__form__btn {
+  background-color: #898121;
+  font-size: 0.7rem;
+  padding-inline: 0.5rem;
+  padding-block: 0.2rem;
+  border-radius: 1rem;
+  color: #F7F1E5;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+  margin-inline: auto;
+}
+@media screen and (min-width: 1000px) {
+  .access__login__form__btn, .access__regist__form__btn {
+    font-size: 1rem;
+  }
+}
+.access__login__form__btn:disabled, .access__regist__form__btn:disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+.access__login__form__btn:hover, .access__regist__form__btn:hover {
+  box-shadow: 0 5px 3px -1px #898121;
+  transform: translateY(-2px);
+}
+.access__login__form__msj, .access__regist__form__msj {
+  color: #862B0D;
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+.labelIn {
+  font-size: 0.7rem;
+  top: 0 !important;
+  color: #E7B10A;
+}
+
+@media screen and (min-width: 600px) {
+  .access {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .access > * {
+    flex-basis: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .access {
+    padding-inline: 20vw;
+    padding-top: 10vh;
+  }
+  .access__login__form, .access__regist__form {
+    gap: 1.5rem;
+  }
+  .access__login__form label, .access__regist__form label {
+    font-size: 1.5rem;
+  }
+  .access__login__form input, .access__regist__form input {
+    padding-top: 1.5rem;
+    font-size: 1.5rem;
+  }
+  .labelIn {
+    font-size: 1rem !important;
   }
 }
 html {

@@ -17,10 +17,10 @@
     }
     &__slide{
       @include transitionSlow;
-      width: 400%;
+      width: 360vw;
       display: flex;
       img{
-        width: 100%;
+        width: 90vw;
         height: 200px;
         object-fit: cover;
       }

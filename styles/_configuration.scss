@@ -28,6 +28,7 @@ $colPrice:#694F04;
   color: $fontCol;
   cursor: pointer;
   @include transitionFast;
+  
   @media screen and (min-width:1000px) {
     font-size: 1rem;
   }
