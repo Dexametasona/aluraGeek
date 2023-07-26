@@ -1,0 +1,31 @@
+@media screen and (min-width:500px) {
+ .product__box__card{
+  font-size: 1rem;
+ }
+}
+@media screen and (min-width:700px) {
+ .product__box__card{
+  grid-column: span 6;
+ }
+}
+@media screen and (min-width:1000px) {
+ .product__box__card{
+  grid-column: span 4;
+  font-size: 1.2rem;
+  p{
+    padding-inline: 10%;
+  }
+  &__actions>button{
+    font-size: 1.3rem;
+    img{
+      height: 1.5rem;
+    }
+  }
+}
+}
+@media screen and (min-width:1200px) {
+  .product__box__card{
+    // grid-column: span 3;
+    font-size: 1.5rem;
+ }
+}

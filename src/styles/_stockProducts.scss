@@ -9,6 +9,7 @@
     font-weight: lighter;
   }
   &__category{
+    position: relative;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 0.5rem;
@@ -32,13 +33,16 @@
         img{
           @include transitionSlow;
         }
-        &__first{
+        &__mask{
           position: absolute;
-          z-index: 2;
+          z-index: 1;
           top: 0;
           left: 0;
+          width: 100%;
+          padding-inline: 20%;
+          background-color: $bgColor;
         }
-        &:hover>&__first{
+        &:hover>&__mask{
           opacity: 0;
         }
         &:hover>img{
@@ -56,6 +60,8 @@
         align-items: center;
         margin-top: 1rem;
         button{
+          display: none;
+          align-items: center;
           @include btnStyle($bgColor, $colPrimary);
           font-size: 0.5rem;
           &:hover{
@@ -63,23 +69,24 @@
             transform: translateY(-4px);
           }
         }
+        &__fav:hover{
+          background-color: changeOpacity($colThird, 0.8) !important;
+          transform: translateY(-4px);
+        }
         img{
           height: 1rem;
           border-radius: 50%;
-          cursor: pointer;
-          @include transitionFast;
-          &:hover{
-            background-color: $colPrice;
-            box-shadow: 0 1px 4px -2px black;
-            transform: translateY(-4px);
-          }
-          &:first-child:hover{
-            background-color: $colThird;
-          }
         }
-        &>*{
-          display: none;
-        }
+      }
+      &__discount{
+        position: absolute;
+        background-color: $colThird;
+        color: $bgColor;
+        border-radius: 50%;
+        // right: 0;
+        z-index: 2;
+        padding: 5px;
+        font-size: 0.5rem;
       }
       &:hover{
         box-shadow: 0px 2px 2px -1px black;
@@ -88,7 +95,7 @@
         transform: translateY(-2px);
       }
       &:hover>&__actions>*{
-        display: block;
+        display: flex;
       }
     }
   }

@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "firebase": "^10.0.0"
+  },
+  "name": "alurageek",
+  "description": "Tendra las páginas:\r - Home\r - Productos\r - Añadir producto\r - Detalles de producto\r ### &copy;Desarrollado por Alexander Machicado G.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
