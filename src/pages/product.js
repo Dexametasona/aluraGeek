@@ -25,13 +25,19 @@ function createCard(maskUrl, bgUrl, name, price) {
   const card = document.createElement("div");
   card.classList.add("product__box__card");
   card.innerHTML = cardTemplate(maskUrl, bgUrl, name, price);
-  contenedor.appendChild(card);
+  if(contenedor!=null){
+    contenedor.appendChild(card);
+  }
 
-  const btn=document.querySelector('.product__box__card__actions__detail')
+  const btn = document.querySelector(".product__box__card__actions__detail");
 }
 
-export const renderProducts = getProducts().then(res=>{
-  res.forEach(({name,photo,price})=>{
-    createCard(photo.mask, photo.bg, name, price)
-  })
-})
+export const renderProducts =()=>{
+  if(window.location.pathname=="/products.html"){
+    getProducts().then(res => {
+      res.forEach(({ name, photo, price }) => {
+        createCard(photo.mask, photo.bg, name, price);
+      });
+    });
+  }
+}

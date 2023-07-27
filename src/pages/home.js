@@ -18,7 +18,7 @@ const cardTemplate = (maskUrl, bgUrl, name, price, discount) => {
     </button>
   </div>
   <div class="stock__category__card__discount">
-    <span>-${discount*100}%</span>
+    <span>-${discount * 100}%</span>
   </div>`;
   return templateCard;
 };
@@ -27,20 +27,25 @@ function createCard(maskUrl, bgUrl, name, price, discount, contenedor) {
   const card = document.createElement("div");
   card.classList.add("stock__category__card");
   card.innerHTML = cardTemplate(maskUrl, bgUrl, name, price, discount);
-  contenedor.appendChild(card);
+  if (contenedor != null) {
+    contenedor.appendChild(card);
+  }
 
   const btn = document.querySelector(".stock__category__card__actions__detail");
 }
 
-export const renderStockProducts = getProducts().then((res) => {
-  const contenedorA = document.querySelector("[data-categoryA]");
-  const contenedorB = document.querySelector("[data-categoryB");
-  res.forEach(({ name, photo, price, discount, category }, i) => {
-    if(category=='politic' && i<13){
-      createCard(photo.mask, photo.bg, name, price, discount, contenedorA);
-    }
-    else if(category=='history' && i<13){
-      createCard(photo.mask, photo.bg, name, price, discount, contenedorB);
-    }
-  });
-});
+export const renderStockProducts =()=>{
+  if(window.location.pathname=="/index.html"){
+    getProducts().then(res => {
+      const contenedorA = document.querySelector("[data-categoryA]");
+      const contenedorB = document.querySelector("[data-categoryB");
+      res.forEach(({ name, photo, price, discount, category }, i) => {
+        if (category == "politic" && i < 13) {
+          createCard(photo.mask, photo.bg, name, price, discount, contenedorA);
+        } else if (category == "history" && i < 13) {
+          createCard(photo.mask, photo.bg, name, price, discount, contenedorB);
+        }
+      });
+    });
+  }
+}

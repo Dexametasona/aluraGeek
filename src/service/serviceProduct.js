@@ -1,9 +1,8 @@
-import {app} from './firebaseInit';
-import { collection, deleteDoc, doc, getDocs, getFirestore } from 'firebase/firestore'
+import { db } from './firebaseInit';
+import { addDoc, collection, deleteDoc, doc, getDocs} from 'firebase/firestore'
 
-const db=getFirestore(app);
+//referencia a la coleccion
 const productData = collection(db, 'aluraGeekData');
-const listProducts= await getDocs(productData)
 
 export async function getProducts(){
   const listProducts= await getDocs(productData);
@@ -19,4 +18,7 @@ export async function deleteProduct(id){
   await deleteDoc(productRef);
 }
 
-
+export async function createProduct(newProd) {
+    const newDoc=await addDoc(productData, newProd)
+    return newDoc;
+}

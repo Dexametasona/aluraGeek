@@ -49,30 +49,39 @@
         <input type="text" id="name" name="name" placeholder="Producto ejm FF0001">
       </div>
       <div class="addProd__form__field">
-        <label for=""></label>
-        <input type="text" id="" name="" placeholder="">
+        <label for="category">Categor&iacute;a</label>
+        <input required type="text" id="category" name="category" placeholder="History">
       </div>
       <div class="addProd__form__field">
-        <label for=""></label>
-        <input type="text" id="" name="" placeholder="">
+        <label for="price">Precio</label>
+        <input required type="number" id="price" name="price" placeholder="10.60">
       </div>
       <div class="addProd__form__field">
-        <label for=""></label>
-        <input type="text" id="" name="" placeholder="">
+        <label for="stock">Stock</label>
+        <input required type="number" id="stock" name="stock" placeholder="100">
       </div>
       <div class="addProd__form__field">
-        <label for=""></label>
-        <input type="text" id="" name="" placeholder="">
+        <label for="discount">Descuento</label>
+        <input required type="number" id="discount" name="discount" placeholder="0.5">
       </div>
       <div class="addProd__form__field">
-        <label for=""></label>
-        <input type="text" id="" name="" placeholder="">
+        <label for="photoPerfil">Foto de perfil</label>
+        <input required type="url" id="photoPerfil" name="photoPerfil" placeholder="www.ejemplo.com">
       </div>
       <div class="addProd__form__field">
-        <label for=""></label>
-        <input type="text" id="" name="" placeholder="">
+        <label for="photoBg">Foto completa</label>
+        <input required type="url" id="photoBg" name="photoBg" placeholder="www.ejemplo.com">
+      </div>
+      <div class="addProd__form__field">
+        <label for="description">Descripci&oacute;n</label>
+        <textarea required name="description" id="description" rows="5" placeholder="Descripci&oacute;n del producto"></textarea>
+      </div>
+      <div class="addProd__form__btn">
+        <button disabled type="submit">Enviar</button>
       </div>
     </form>
+    <p class="addProd__message">
+    </p>
   </section>
   <!-- -----------------------------------------contact -->
   <section class="contact">
@@ -117,8 +126,8 @@
     <div class="contact__formBox">
       <h3>Cont&aacute;ctanos</h3>
       <form class="contact__formBox__form" method="get">
-        <input type="email" placeholder="Email" required>
-        <textarea name="message" id="message" rows="5" required placeholder="Escribe tu mensaje"></textarea>
+        <input type="email" placeholder="Email">
+        <textarea name="message" id="message" rows="5" placeholder="Escribe tu mensaje"></textarea>
         <button type="submit">Enviar</button>
       </form>
     </div>

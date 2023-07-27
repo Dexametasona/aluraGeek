@@ -1,0 +1,30 @@
+@media screen and (min-width:510px) {
+  .addProd__form__field{
+    grid-column: span 6;
+  }
+}
+@media screen and (min-width:710px) {
+  .addProd__form{
+    gap: 2rem;
+  }
+}
+@media screen and (min-width:1000px) {
+  .addProd__form{
+  &__field{
+    font-size: 1.5rem;
+  }
+  &__btn>button{
+    font-size: 1.5rem !important;
+  }
+}
+
+}
+@media screen and (min-width:1200px) {
+  .addProd__form{
+    padding-inline: 4rem;
+    &__btn{
+      justify-self: center;
+      width: 50%;
+    }
+  }
+}

@@ -1,7 +1,7 @@
-import { getDoc } from 'firebase/firestore';
-import { listProducts, deleteProduct, getProducts } from './service/serviceProduct';
 import {renderProducts} from './pages/product';
 import { renderStockProducts } from './pages/home';
+import { newProd } from './pages/addProd';
 
 renderProducts();
 renderStockProducts();
+newProd();

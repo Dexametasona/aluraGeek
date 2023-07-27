@@ -984,6 +984,23 @@
   height: 1rem;
   border-radius: 50%;
 }
+.product__box__card__add {
+  background-color: rgba(231, 177, 10, 0.5);
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: 1rem;
+  box-shadow: 0 0 16px 5px rgba(0, 0, 0, 0.6);
+}
+.product__box__card__add a {
+  transition: all ease-in-out 0.3s;
+}
+.product__box__card__add:hover > a {
+  animation: zoom 1s infinite;
+}
+.product__box__card__add:hover {
+  box-shadow: none;
+}
 .product__box__card:hover {
   box-shadow: 0px 2px 10px -1px black;
   background-color: #E7B10A;
@@ -994,6 +1011,20 @@
   display: flex;
 }
 
+@keyframes zoom {
+  0% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
 @media screen and (min-width: 500px) {
   .product__box__card {
     font-size: 1rem;
@@ -1022,6 +1053,119 @@
 @media screen and (min-width: 1200px) {
   .product__box__card {
     font-size: 1.5rem;
+  }
+}
+.addProd h2 {
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+@media screen and (min-width: 1000px) {
+  .addProd h2 {
+    font-size: 2.5rem;
+  }
+}
+.addProd__form {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  padding-block: 1rem;
+}
+.addProd__form__field {
+  grid-column: span 12;
+  display: flex;
+  flex-direction: column;
+  font-weight: bolder;
+  color: #694F04;
+}
+.addProd__form__field label {
+  margin-bottom: 5px;
+}
+.addProd__form__field input, .addProd__form__field textarea {
+  background-color: rgba(231, 177, 10, 0.2);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: 0 0px 10px 0px rgba(0, 0, 0, 0.5);
+  font-weight: lighter;
+  transition: all ease-in-out 0.3s;
+}
+.addProd__form__field input::-moz-placeholder, .addProd__form__field textarea::-moz-placeholder {
+  opacity: 0.4;
+}
+.addProd__form__field input::placeholder, .addProd__form__field textarea::placeholder {
+  opacity: 0.4;
+}
+.addProd__form__field input:focus, .addProd__form__field textarea:focus {
+  outline: solid #E7B10A 2px;
+  background-color: rgba(231, 177, 10, 0.5);
+}
+.addProd__form__btn {
+  grid-column: span 12;
+}
+.addProd__form__btn button {
+  background-color: #694F04;
+  font-size: 0.7rem;
+  padding-inline: 0.5rem;
+  padding-block: 0.2rem;
+  border-radius: 1rem;
+  color: #F7F1E5;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+  width: 100%;
+  text-align: center;
+  transition: all ease-in-out 0.3s;
+}
+@media screen and (min-width: 1000px) {
+  .addProd__form__btn button {
+    font-size: 1rem;
+  }
+}
+.addProd__form__btn button:hover {
+  box-shadow: 0 0 16px 0 rgba(231, 177, 10, 0.9);
+  transform: translateY(-5px);
+  background-color: rgba(231, 177, 10, 0.8) !important;
+}
+.addProd__form__btn button:disabled {
+  background-color: rgba(137, 129, 33, 0.6) !important;
+}
+.addProd__message {
+  color: #694F04;
+  font-weight: bolder;
+}
+
+.invalid {
+  background-color: rgba(134, 43, 13, 0.5) !important;
+}
+.invalid:focus {
+  outline: solid #862B0D 2px !important;
+}
+
+@media screen and (min-width: 510px) {
+  .addProd__form__field {
+    grid-column: span 6;
+  }
+}
+@media screen and (min-width: 710px) {
+  .addProd__form {
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .addProd__form__field {
+    font-size: 1.5rem;
+  }
+  .addProd__form__btn > button {
+    font-size: 1.5rem !important;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .addProd__form {
+    padding-inline: 4rem;
+  }
+  .addProd__form__btn {
+    justify-self: center;
+    width: 50%;
   }
 }
 html {
