@@ -1,0 +1,26 @@
+@media screen and (min-width:600px) {
+  .detail__profile__discount{
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width:870px) {
+  .detail__profile__discount{
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width:1000px) {
+  .detail{
+    flex-direction: row;
+    &__info{
+      max-width: 50%;
+    }
+  }
+}
+@media screen and (min-width:1200px) {
+  .detail{
+    &__info{
+      padding-left: 2rem;
+      font-size: 1.5rem;
+    }
+  }
+}

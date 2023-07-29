@@ -115,8 +115,8 @@ const regexA = {
     msj: "El máximo numero de stock es 99999, y mínimo 0",
   },
   description: {
-    reg: /^[\s\S]{1,500}$/,
-    msj: "El campo descripción es requerido.",
+    reg: /^[\s\S]{1,800}$/,
+    msj: "El campo descripción es requerido y máximo 500 caracteres.",
   },
   photoPerfil: {
     reg: /^[^\n]{1,500}$/,
@@ -130,8 +130,8 @@ const regexA = {
 inputs.forEach((input) => {
   input.addEventListener("input", (event) => {
     const field = event.target;
-    const btn=document.querySelector('.addProd__form__btn>button')
-    const message=document.querySelector('.addProd__message')
+    const btn = document.querySelector(".addProd__form__btn>button");
+    const message = document.querySelector(".addProd__message");
     let isValid = true;
     isValid = regexA[field.name].reg.test(field.value);
     if (!isValid) {
@@ -139,8 +139,11 @@ inputs.forEach((input) => {
     } else {
       input.classList.remove("invalid");
     }
-    const allFieldsValid = Array.from(inputs).every(inputA=>regexA[inputA.name].reg.test(inputA.value));
+    const allFieldsValid = Array.from(inputs).every((inputA) =>
+      regexA[inputA.name].reg.test(inputA.value)
+    );
     btn.disabled = !allFieldsValid;
-    message.innerHTML=isValid?'':regexA[field.name].msj;
+    message.innerHTML = isValid ? "" : regexA[field.name].msj;
   });
 });
+
