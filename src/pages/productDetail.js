@@ -1,4 +1,6 @@
+import Swal from "sweetalert2";
 import { deleteProduct, getOnlyProduct } from "../service/serviceProduct";
+import { getUser } from "../service/serviceUser";
 
 export const renderOnlyProduct = async () => {
   if (window.location.pathname == "/productDetail.html") {
@@ -104,9 +106,27 @@ function zoomHoverInOut() {
 
 function deleteProd(button, id) {
   button.addEventListener("click", () => {
-    deleteProduct(id).then(() => {
-      window.location.href = "/index.html";
-    });
+
+    if(getUser()){
+      Swal.fire({
+        icon:'question',
+        title:'Seguro desea eliminar este producto?',
+        showCancelButton:true,
+        showConfirmButton:true
+      }).then(res=>{
+        if(res.isConfirmed){
+          deleteProduct(id).then(() => {
+            window.location.href = "/index.html";
+          });
+        }
+      })
+    }else{
+      Swal.fire({
+        icon:'error',
+        title:'Error',
+        text:'Debes iniciar sesión para modificar la base de datos.'
+      })
+    }
   });
 }
 function toUpdateProd(button, id) {

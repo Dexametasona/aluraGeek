@@ -2,7 +2,7 @@ import { renderProducts } from "./pages/product";
 import { renderStockProducts } from "./pages/home";
 import { newProd } from "./pages/addProd";
 import { renderOnlyProduct } from "./pages/productDetail";
-import { accessAuth, setUpFormValidationsAndAnimations } from "./pages/access";
+import { accessAuth, eyeBtnAction, setUpFormValidationsAndAnimations } from "./pages/access";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./service/firebaseInit";
 import { sesionActions, setProfileDataAccount, updateDataAccount} from "./pages/account";
@@ -15,6 +15,7 @@ setUpFormValidationsAndAnimations();
 accessAuth();
 sesionActions();
 updateDataAccount();
+eyeBtnAction();
 
 onAuthStateChanged(auth, (user) => {
   const btnLogin = document.querySelector(".menu__login__btn");

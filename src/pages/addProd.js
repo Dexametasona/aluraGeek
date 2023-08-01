@@ -1,8 +1,10 @@
+import Swal from "sweetalert2";
 import {
   createProduct,
   getOnlyProduct,
   updateProduct,
 } from "../service/serviceProduct";
+import { getUser } from "../service/serviceUser";
 
 export const newProd = async () => {
   if (window.location.pathname == "/addProducts.html") {
@@ -54,24 +56,32 @@ export const newProd = async () => {
         },
       };
       const messageBox = document.querySelector(".addProd__message");
-      
-      if (!hasParam()) {
-        createProduct(data).then(() => {
-          messageBox.innerHTML = "Producto registrado exitosamente.";
-          setTimeout(() => {
-            messageBox.innerHTML = "";
-          }, 3000);
-        });
-      } 
-      else {
-        const urlParams = new URLSearchParams(window.location.search);
-        const id = urlParams.get("id");
-        updateProduct(id, data).then(()=>{
-          messageBox.innerHTML = "Producto actualizado exitosamente. Redirigiendo en 3s...";
-          setTimeout(() => {
-            messageBox.innerHTML = "";
-            window.location.href='/products.html'
-          }, 3000);
+
+      if(getUser()){
+        if (!hasParam()) {
+          createProduct(data).then(() => {
+            messageBox.innerHTML = "Producto registrado exitosamente.";
+            setTimeout(() => {
+              messageBox.innerHTML = "";
+            }, 3000);
+          });
+        } 
+        else {
+          const urlParams = new URLSearchParams(window.location.search);
+          const id = urlParams.get("id");
+          updateProduct(id, data).then(()=>{
+            messageBox.innerHTML = "Producto actualizado exitosamente. Redirigiendo en 3s...";
+            setTimeout(() => {
+              messageBox.innerHTML = "";
+              window.location.href='/products.html'
+            }, 3000);
+          })
+        }
+      }else{
+        Swal.fire({
+          icon:'error',
+          title:'Error',
+          text:'Debes iniciar sesión para modificar la bases de datos.'
         })
       }
 

@@ -866,6 +866,14 @@
   opacity: 0.7;
   font-size: 0.8rem;
 }
+.access__Regist__form__input__eye {
+  position: absolute;
+  right: 5px;
+  aspect-ratio: 1/1;
+  max-height: 1rem;
+  top: 45%;
+  cursor: pointer;
+}
 .labelIn {
   font-size: 0.7rem;
   top: 0 !important;
@@ -885,6 +893,10 @@
   .access, .account {
     padding-inline: 20vw;
     padding-top: 10vh;
+  }
+  .access .access__Regist__form__input__eye, .account .access__Regist__form__input__eye {
+    top: 30%;
+    max-height: 2rem;
   }
   .access__Login__form, .account__box__FormProfile, .account__box__FormAccount, .access__Regist__form {
     gap: 1.5rem;

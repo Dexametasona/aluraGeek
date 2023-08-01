@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "firebase": "^10.0.0",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "sweetalert2": "^11.7.20"
   },
   "name": "alurageek",
   "description": "Tendra las páginas:\r - Home\r - Productos\r - Añadir producto\r - Detalles de producto\r ### &copy;Desarrollado por Alexander Machicado G.",

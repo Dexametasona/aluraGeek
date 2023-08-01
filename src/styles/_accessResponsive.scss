@@ -13,6 +13,10 @@
   .access{
     padding-inline: 20vw;
     padding-top: 10vh;
+    .access__Regist__form__input__eye{
+      top:30%;
+      max-height: 2rem;
+    }
     &__Login{
       &__form{
         gap: 1.5rem;

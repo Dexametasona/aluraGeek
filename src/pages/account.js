@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import { deleteUserService, getUser, logOut, setProfile } from '../service/serviceUser';
 
 const regex = {
@@ -25,16 +26,35 @@ export const sesionActions=()=>{
     const btnDeleteuser=document.querySelector('[data-delete]');
     
     btnLogout.addEventListener('click', ()=>{
-      logOut().then(()=>{
-        console.log("Sesión cerrada con éxito")
-        window.location.href='/login.html';
+      Swal.fire({
+        icon:'question',
+        title:'Estas seguro que quieres cerrar sesión?',
+        showConfirmButton:true,
+        showCancelButton:true
+      }).then(res=>{
+        if(res.isConfirmed){
+          logOut().then(()=>{
+            console.log("Sesión cerrada con éxito")
+            window.location.href='/login.html';
+          })
+        }
       })
     })
     
     btnDeleteuser.addEventListener('click',()=>{
-      deleteUserService().then(()=>{
-        window.location.href='/login.html';
-      });
+      Swal.fire({
+        icon:'question',
+        title:'Esta seguro de eliminar su cuenta?',
+        text:'Esta acción es irreversible y sus datos se perderan.',
+        showConfirmButton:true,
+        showCancelButton:true
+      }).then(res=>{
+        if(res.isConfirmed){
+          deleteUserService().then(()=>{
+            window.location.href='/login.html';
+          });
+        }
+      })
     })
   }
 }
@@ -77,8 +97,17 @@ export const updateDataAccount=()=>{
       inputs.forEach(input=>{
         data[input.name]=input.value;
       })
-      setProfile(data).then(()=>{
-        location.reload();
+      Swal.fire({
+        icon:'question',
+        title:'Estas seguro de guardar los cambios?',
+        showConfirmButton:true,
+        showCancelButton:true
+      }).then(res=>{
+        if(res.isConfirmed){
+          setProfile(data).then(()=>{
+            location.reload();
+          })
+        }        
       })
     })
   }

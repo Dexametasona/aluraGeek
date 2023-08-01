@@ -12,21 +12,29 @@ const regex = {
     reg: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%&+!\-_]).{8,}$/,
     msj: "La contraseña debe tener al menos 1 mayúscula, 1 caracter especial, 1 número y mínimo 8 carácteres.",
   },
+  passwordRepeat: {
+    reg: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%&+!\-_]).{8,}$/,
+    msj: "Las contraseñas deben coincidir.",
+  },
 };
 
 export function validator(id, form) {
   const msjbox = document.querySelector(`[data-${form}-msj]`);
   const input = document.querySelector(`[data-${form}-input-${id}]`);
+  if(id=='password'){
+    regex.passwordRepeat.reg=new RegExp(`^${input.value}$`);
+    validator('passwordRepeat',form)
+  }
   if (!regex[id].reg.test(input.value)) {
     msjbox.innerHTML = regex[id].msj;
     regex[id].status = true;
-    input.style.backgroundColor="rgba(134, 43, 13, 0.7)";
+    input.style.backgroundColor = "rgba(134, 43, 13, 0.7)";
   } else {
     msjbox.innerHTML = "";
     regex[id].status = false;
-    input.style.backgroundColor="white";
+    input.style.backgroundColor = "white";
   }
-  btnStatus(form)
+  btnStatus(form);
 }
 export function btnStatus(form) {
   const Form = document.querySelector(`[data-form-${form}]`);
@@ -56,4 +64,13 @@ export function labelOut(id, form) {
   }
   validator(id, form);
   btnStatus(form);
+}
+
+export function showPass(btn, input) {
+  let eyeStatus=input.type=='text';
+  eyeStatus=!eyeStatus;
+  const eye = btn.querySelector("img");
+  eye.src = `assets/eye_${eyeStatus ? "open" : "close"}.png`;
+  input.type = eyeStatus ? "text" : "password";
+
 }

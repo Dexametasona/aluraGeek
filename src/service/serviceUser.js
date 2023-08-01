@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, onAuthStateChanged, updateProfile, deleteUser } from "firebase/auth";
+  import { createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, updateProfile, deleteUser } from "firebase/auth";
 import { auth } from "./firebaseInit";
 
 export function registUser({ email, password }) {
