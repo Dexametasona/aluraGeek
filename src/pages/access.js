@@ -64,6 +64,7 @@ export const accessAuth = () => {
           const user = userCredential.user;
           cleanFieldInputs("Regist");
           messageBox.innerHTML="Nuevo usuario registrado con éxito."
+          messageBox.style.color='green';
           const {displayName}=data
           const profile={displayName};
           setProfile(profile).then(()=>{

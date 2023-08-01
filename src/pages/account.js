@@ -2,8 +2,8 @@ import { deleteUserService, getUser, logOut, setProfile } from '../service/servi
 
 const regex = {
   displayName: {
-    reg: /^$|^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s0-9\-_]{1,50}$/,
-    msj: "El campo nombre es menor a 50 carácteres o nulo, y no permite caracteres especiales.",
+    reg: /^$|^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s0-9\-_]{1,20}$/,
+    msj: "El campo nombre es menor a 20 carácteres o nulo, y no permite caracteres especiales.",
   },
   photoURL: {
     reg: /^$|^[^\n]{1,500}$/,

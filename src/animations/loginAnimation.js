@@ -1,8 +1,8 @@
 /* ----------------form animation and validation*/
 const regex = {
   displayName: {
-    reg: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{1,50}$/,
-    msj: "El campo nombre es requerido, debe solo tener letras y ser menor a 50 carácteres.",
+    reg: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{1,20}$/,
+    msj: "El campo nombre es requerido, debe solo tener letras y ser menor a 20 carácteres.",
   },
   email: {
     reg: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
