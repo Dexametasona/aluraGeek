@@ -1,5 +1,5 @@
-import { labelOut, labelIn, validator } from "../animations/loginAnimation";
-import { signIn, registUser, setProfile, logOut } from "../service/serviceUser";
+import { labelOut, labelIn, validator, showPass } from "../animations/loginAnimation";
+import { signIn, registUser, setProfile} from "../service/serviceUser";
 
 export const setUpFormValidationsAndAnimations = () => {
   if (window.location.pathname == "/login.html") {
@@ -112,4 +112,17 @@ function cleanMessage(messageBox){
     messageBox.innerHTML="";
     messageBox.style.color="#862B0D";
   }, 3000);
+}
+
+export const eyeBtnAction=()=>{
+  const btns=document.querySelectorAll('.access__Regist__form__input__eye');
+
+  btns.forEach(btn=>{
+    btn.addEventListener('click', (event)=>{
+      event.preventDefault();
+      const container=btn.parentNode;
+      const input=container.querySelector('input');
+      showPass(btn,input);
+    })
+  })
 }
