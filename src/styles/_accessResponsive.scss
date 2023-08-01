@@ -13,7 +13,7 @@
   .access{
     padding-inline: 20vw;
     padding-top: 10vh;
-    &__login{
+    &__Login{
       &__form{
         gap: 1.5rem;
         label{
@@ -21,6 +21,12 @@
         }
         input{
           padding-top: 1.5rem;
+          font-size: 1.5rem;
+        }
+        button{
+          font-size: 1.5rem;
+        }
+        &__msj{
           font-size: 1.5rem;
         }
       }

@@ -1,0 +1,79 @@
+.account {
+  &__title{
+    @include titleStyle;
+  }
+  @extend .access;
+  flex-wrap: wrap;
+  &>*{
+    margin-bottom: 1rem;
+  }
+  &__profile {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    place-items: center;
+    img {
+      grid-column: span 2;
+      background-color: white;
+      object-fit: cover;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      min-width: 100px;
+      max-width: 200px;
+      box-shadow: 0 0 16px -4px black;
+      margin-bottom: 1rem;
+    }
+    &__actions{
+      grid-column: span 2;
+      button{
+        background-color: $colThird;
+        margin-bottom: 1rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 1rem;
+        font-size: 0.7rem;
+        color: $bgColor;
+        box-shadow: 0 0 5px 1px black;
+        @include transitionFast;
+        margin-right: 1rem;
+        cursor: pointer;
+        &:nth-child(1):hover{
+          transform: translateY(-5px);
+          box-shadow: 0 2px 7px 2px black;
+        }
+        &:nth-child(2):hover{
+          animation: beat infinite 0.5s;
+          background-color: changeOpacity($colThird, 0.8)
+        }
+      }
+    } 
+  }
+  &__box{
+    h2{
+      @include titleStyle;
+      color: $colPrimary;
+    }
+    &__FormProfile, &__FormAccount{
+      @extend .access__Login__form;
+
+      &__field{
+        @extend .addProd__form__field;  
+      }
+      &__btn{
+        @extend .addProd__form__btn;
+        button:disabled{
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+@keyframes beat{
+  0%{
+    box-shadow: none;
+  }
+  50%{
+    box-shadow: 0 0 10px 1px red;
+  }
+  100%{
+    box-shadow: none;
+  }
+}

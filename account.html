@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./src/styles/reset.css">
+  <link rel="stylesheet" href="src/styles/reset.css">
   <!------------------------------------------------------------------ font family lato -->
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./src/styles/styles.css">
+  <link rel="stylesheet" href="src/styles/styles.css">
   <title>AluraGeek</title>
 </head>
 <body>
+  <!-- -----------------------------------menu -->
   <section class="promo" id="alura">
     Env&iacute;os gratis a Narnia.
   </section>
-  <!-- ---------------------------------------------menu----- -->
   <section class="menu">
     <button class="menu__sandwich" onclick="menuSlide()">
       <img src="assets/menu-icon.png" alt="menu-icon">
@@ -43,50 +43,60 @@
       <a class="menu__login__account" href="account.html"><img src="assets/user_search_fill.png" alt="login-icon"></a>
     </div>
   </section>
-  <!-- form Register -->
-  <section class="addProd">
-    <h2 data-title>Registrar Producto</h2>
-    <form class="addProd__form">
-      <div class="addProd__form__field">
-        <label for="name">Nombre</label>
-        <input type="text" id="name" name="name" placeholder="Producto ejm FF0001">
+<!-- --------------------------------------opciones de Usuario -->
+<section class="account">
+  <h2 class="account__title">
+    Informaci&oacute;n de la cuenta
+  </h2>
+  <div class="account__profile">
+    <img src="" data-photoProfile alt="Imagen de perfil">
+    <div class="account__profile__actions">
+      <button data-logout>Cerrar Sesi&oacute;n</button>
+      <button data-delete>Eliminar cuenta</button>
+    </div>
+  </div>
+  <div class="account__box">
+    <h2>Perfil del usuario</h2>
+    <form class="account__box__FormProfile">
+      <div class="account__box__FormProfile__field">
+        <label for="displayName">Nombre de usuario</label>
+        <input type="text" id="displayName" name="displayName" placeholder="Nombre de usuario">
       </div>
-      <div class="addProd__form__field">
-        <label for="category">Categor&iacute;a</label>
-        <input required type="text" id="category" name="category" placeholder="History">
+      <div class="account__box__FormProfile__field">
+        <label for="photoURL">Foto de perfil</label>
+        <input type="url" id="photoURL" name="photoURL" placeholder="https://www.image.com">
       </div>
-      <div class="addProd__form__field">
-        <label for="price">Precio</label>
-        <input required type="number" id="price" name="price" placeholder="10.60">
+      <div class="account__box__FormProfile__btn">
+        <button type="submit" disabled data-btnProfile>Actualizar cambios</button>
       </div>
-      <div class="addProd__form__field">
-        <label for="stock">Stock</label>
-        <input required type="number" id="stock" name="stock" placeholder="100">
-      </div>
-      <div class="addProd__form__field">
-        <label for="discount">Descuento</label>
-        <input required type="number" id="discount" name="discount" placeholder="0.5">
-      </div>
-      <div class="addProd__form__field">
-        <label for="photoPerfil">Foto de perfil</label>
-        <input required type="url" id="photoPerfil" name="photoPerfil" placeholder="www.ejemplo.com">
-      </div>
-      <div class="addProd__form__field">
-        <label for="photoBg">Foto completa</label>
-        <input required type="url" id="photoBg" name="photoBg" placeholder="www.ejemplo.com">
-      </div>
-      <div class="addProd__form__field">
-        <label for="description">Descripci&oacute;n</label>
-        <textarea required name="description" id="description" rows="5" placeholder="Descripci&oacute;n del producto"></textarea>
-      </div>
-      <div class="addProd__form__btn">
-        <button disabled type="submit">Enviar</button>
+      <div class="account__box__FormProfile__message">
+        <p></p>
       </div>
     </form>
-    <p class="addProd__message">
-    </p>
-  </section>
-  <!-- -----------------------------------------contact -->
+  </div>
+  <div class="account__box">
+    <h2>Cuenta</h2>
+    <form class="account__box__FormAccount">
+      <div class="account__box__FormAccount__field">
+        <label for="email">Email</label>
+        <input readonly type="email" id="email" name="email">
+      </div>
+      <!-- <div class="account__box__FormAccount__field">
+        <label for="password">Password</label>
+        <input readonly type="password" id="password" name="password">
+      </div> -->
+      <!-- <div class="account__box__FormAccount__field">
+        <label for="passwordCheck">Repetir Password</label>
+        <input type="password" id="passwordCheck" name="passwordChek">
+      </div> -->
+      <!-- <div class="account__box__FormAccount__btn">
+        <button type="submit" data-btnAccount>Actualizar cambios</button>
+      </div> -->
+    </form>
+  </div>
+  
+</section>
+<!-------------------------------------------------- contacto -->
   <section class="contact">
     <div class="contact__logo">
       <img src="assets/aluraLogo.png" alt="alura-logo">
@@ -129,8 +139,8 @@
     <div class="contact__formBox">
       <h3>Cont&aacute;ctanos</h3>
       <form class="contact__formBox__form" method="get">
-        <input type="email" placeholder="Email">
-        <textarea name="message" id="message" rows="5" placeholder="Escribe tu mensaje"></textarea>
+        <input type="email" placeholder="Email" required>
+        <textarea name="message" id="message" rows="5" required placeholder="Escribe tu mensaje"></textarea>
         <button type="submit">Enviar</button>
       </form>
     </div>
@@ -143,7 +153,7 @@
       <img src="assets/up_icon.png" alt="up-icon">
     </a>
   </section>
+  <script src="./src/animation.js"></script>
   <script type="module" src="./dist/main.js"></script>
-  <script src="/src/animation.js"></script>
 </body>
 </html>

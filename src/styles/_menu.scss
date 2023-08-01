@@ -110,14 +110,23 @@
   /* ---------------------------------------------login button */
   &__login{
     display: flex;
-    @include btnStyle($bgColor, $colPrimary);
-    &:hover{
-      box-shadow: 0px 2px 1px 3px changeOpacity($colSecondary, 0.7);
+    &>*{
+      display: flex;
+      align-items: center;
+      @include btnStyle($bgColor, $colPrimary);
+      font-size: 0.5rem;
+      &:hover{
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.7);
+        transform: translateY(-4px);
+      }
+    }
+    &__account{
+      display: none;
     }
   }
 
 }
-/* ---------------------------------------stilo para funciones */
+/* ---------------------------------------estilo para funciones */
 .stickyStyle{
   box-shadow: 0 2px 2px 1px changeOpacity($colThird, 0.5);
   position: sticky;

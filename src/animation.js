@@ -35,65 +35,11 @@ window.addEventListener("scroll", () => {
     menu.classList.remove("stickyStyle");
   }
 });
-/* ----------------form animation and validation*/
-const regex = {
-  nombre: {
-    reg: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{1,50}$/,
-    msj: "El campo nombre es requerido, debe solo tener letras y ser menor a 50 carácteres.",
-  },
-  email: {
-    reg: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-    msj: "El campo email es requerido, debe tener un @ y un punto, no se permiten espacios.",
-  },
-  password: {
-    reg: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%&+!\-_]).{8,}$/,
-    msj: "La contraseña debe tener al menos 1 mayúscula, 1 caracter especial, 1 número y mínimo 8 carácteres.",
-  },
-};
-
-function labelIn(id, form) {
-  const label = document.querySelector(`[data-${form}-label-${id}]`);
-  label.classList.add("labelIn");
-}
-function labelOut(id, form) {
-  const label = document.querySelector(`[data-${form}-label-${id}]`);
-  const input = document.querySelector(`[data-${form}-input-${id}]`);
-
-  if (input.value == "" || input.value == null) {
-    label.classList.toggle("labelIn");
-  }
-  validator(id, input, form);
-  btnStatus(form);
-}
-
-function validator(id, input, form) {
-  const msjbox = document.querySelector(`[data-${form}-msj]`);
-  if (!regex[id].reg.test(input.value)) {
-    msjbox.innerHTML = regex[id].msj;
-    regex[id].status = true;
-  } else {
-    msjbox.innerHTML = "";
-    regex[id].status = false;
-  }
-}
-function btnStatus(form) {
-  const Form = document.querySelector(`[data-form-${form}]`);
-  const btn = document.querySelector(`[data-${form}-btn]`);
-  const inputs = Form.querySelectorAll("input");
-  let status = false;
-  inputs.forEach((input) => {
-    let inputReg = input.id.toLowerCase().replace(form, "");
-    if (!regex[inputReg].reg.test(input.value)) {
-      return (status = true);
-    }
-  });
-  btn.disabled = status;
-}
 /* ------------------------------form addProduct validation */
 const inputs = document.querySelectorAll(
   ".addProd__form__field>*:nth-child(2)"
 );
-const regexA = {
+const regex = {
   name: {
     reg: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s0-9\-_]{1,50}$/,
     msj: "El campo nombre es requerido, menor a 50 carácteres, y no permite caracteres especiales.",
@@ -133,17 +79,17 @@ inputs.forEach((input) => {
     const btn = document.querySelector(".addProd__form__btn>button");
     const message = document.querySelector(".addProd__message");
     let isValid = true;
-    isValid = regexA[field.name].reg.test(field.value);
+    isValid = regex[field.name].reg.test(field.value);
     if (!isValid) {
       input.classList.add("invalid");
     } else {
       input.classList.remove("invalid");
     }
     const allFieldsValid = Array.from(inputs).every((inputA) =>
-      regexA[inputA.name].reg.test(inputA.value)
+      regex[inputA.name].reg.test(inputA.value)
     );
     btn.disabled = !allFieldsValid;
-    message.innerHTML = isValid ? "" : regexA[field.name].msj;
+    message.innerHTML = isValid ? "" : regex[field.name].msj;
   });
 });
 

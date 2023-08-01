@@ -2,7 +2,7 @@
   padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  &__login {
+  &__Login {
     h2{
       @include titleStyle;
       color: $colPrimary;
@@ -34,12 +34,6 @@
           &:focus {
             outline: solid 2px $colPrimary;
           }
-          &:-webkit-autofill,
-          &:-webkit-autofill:hover,
-          &:-webkit-autofill:focus,
-          &:-webkit-autofill:active {
-            transition: background-color 5000s ease-in-out 0s;
-          }
         }
       }
       &__btn {
@@ -50,8 +44,8 @@
           cursor: auto;
         }
         &:hover{
-          box-shadow: 0 5px 3px -1px $colPrimary;
-          transform: translateY(-2px);
+          box-shadow: 0 5px 3px -1px black;
+          transform: translateY(-4px);
         }
       }
       &__msj {
@@ -61,18 +55,18 @@
       }
     }
   }
-  &__regist{
-    @extend .access__login;
+  &__Regist{
+    @extend .access__Login;
     &__form{
-      @extend .access__login__form;
+      @extend .access__Login__form;
       &__input{
-        @extend .access__login__form__input;
+        @extend .access__Login__form__input;
       }
       &__btn{
-        @extend .access__login__form__btn;
+        @extend .access__Login__form__btn;
       }
       &__msj{
-        @extend .access__login__form__msj;
+        @extend .access__Login__form__msj;
       }
     }
   }

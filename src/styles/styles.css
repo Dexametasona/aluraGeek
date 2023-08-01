@@ -115,6 +115,10 @@
 }
 .menu__login {
   display: flex;
+}
+.menu__login > * {
+  display: flex;
+  align-items: center;
   background-color: #898121;
   font-size: 0.7rem;
   padding-inline: 0.5rem;
@@ -123,17 +127,22 @@
   color: #F7F1E5;
   cursor: pointer;
   transition: all ease-in-out 0.3s;
+  font-size: 0.5rem;
 }
 @media screen and (min-width: 1000px) {
-  .menu__login {
+  .menu__login > * {
     font-size: 1rem;
   }
 }
-.menu__login:hover {
-  box-shadow: 0px 2px 1px 3px rgba(231, 177, 10, 0.7);
+.menu__login > *:hover {
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.7);
+  transform: translateY(-4px);
+}
+.menu__login__account {
+  display: none;
 }
 
-/* ---------------------------------------stilo para funciones */
+/* ---------------------------------------estilo para funciones */
 .stickyStyle {
   box-shadow: 0 2px 2px 1px rgba(134, 43, 13, 0.5);
   position: sticky;
@@ -745,6 +754,9 @@
   .menu__nav__search button img {
     height: 2rem;
   }
+  .menu__login > a {
+    padding-block: 0.7rem;
+  }
   .title__slider__btnLeft, .title__slider__btnRight {
     width: 96px;
   }
@@ -778,12 +790,12 @@
     padding-inline: 0;
   }
 }
-.access {
+.access, .account {
   padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
 }
-.access__login h2, .access__regist h2 {
+.access__Login h2, .access__Regist h2 {
   text-align: center;
   font-weight: bolder;
   margin-bottom: 1rem;
@@ -791,30 +803,30 @@
   color: #898121;
 }
 @media screen and (min-width: 1000px) {
-  .access__login h2, .access__regist h2 {
+  .access__Login h2, .access__Regist h2 {
     font-size: 2.5rem;
   }
 }
-.access__login__form, .access__regist__form {
+.access__Login__form, .account__box__FormProfile, .account__box__FormAccount, .access__Regist__form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.access__login__form__input, .access__regist__form__input {
+.access__Login__form__input, .access__Regist__form__input {
   position: relative;
   border-radius: 1rem;
 }
-.access__login__form__input > *, .access__regist__form__input > * {
+.access__Login__form__input > *, .access__Regist__form__input > * {
   transition: all ease-in-out 0.3s;
 }
-.access__login__form__input label, .access__regist__form__input label {
+.access__Login__form__input label, .access__Regist__form__input label {
   color: #E7B10A;
   position: absolute;
   top: 1rem;
   left: 0.5rem;
   opacity: 0.5;
 }
-.access__login__form__input input, .access__regist__form__input input {
+.access__Login__form__input input, .access__Regist__form__input input {
   padding-top: 1rem;
   width: 100%;
   padding-left: 0.5rem;
@@ -822,14 +834,10 @@
   border-radius: 0.5rem;
   outline: solid 2px transparent;
 }
-.access__login__form__input input:focus, .access__regist__form__input input:focus {
+.access__Login__form__input input:focus, .access__Regist__form__input input:focus {
   outline: solid 2px #898121;
 }
-.access__login__form__input input:-webkit-autofill, .access__regist__form__input input:-webkit-autofill, .access__login__form__input input:-webkit-autofill:hover, .access__login__form__input input:-webkit-autofill:focus, .access__login__form__input input:-webkit-autofill:active {
-  -webkit-transition: background-color 5000s ease-in-out 0s;
-  transition: background-color 5000s ease-in-out 0s;
-}
-.access__login__form__btn, .access__regist__form__btn {
+.access__Login__form__btn, .access__Regist__form__btn {
   background-color: #898121;
   font-size: 0.7rem;
   padding-inline: 0.5rem;
@@ -841,19 +849,19 @@
   margin-inline: auto;
 }
 @media screen and (min-width: 1000px) {
-  .access__login__form__btn, .access__regist__form__btn {
+  .access__Login__form__btn, .access__Regist__form__btn {
     font-size: 1rem;
   }
 }
-.access__login__form__btn:disabled, .access__regist__form__btn:disabled {
+.access__Login__form__btn:disabled, .access__Regist__form__btn:disabled {
   opacity: 0.5;
   cursor: auto;
 }
-.access__login__form__btn:hover, .access__regist__form__btn:hover {
-  box-shadow: 0 5px 3px -1px #898121;
-  transform: translateY(-2px);
+.access__Login__form__btn:hover, .access__Regist__form__btn:hover {
+  box-shadow: 0 5px 3px -1px black;
+  transform: translateY(-4px);
 }
-.access__login__form__msj, .access__regist__form__msj {
+.access__Login__form__msj, .access__Regist__form__msj {
   color: #862B0D;
   opacity: 0.7;
   font-size: 0.8rem;
@@ -865,27 +873,33 @@
 }
 
 @media screen and (min-width: 600px) {
-  .access {
+  .access, .account {
     flex-direction: row;
     gap: 1rem;
   }
-  .access > * {
+  .access > *, .account > * {
     flex-basis: 50%;
   }
 }
 @media screen and (min-width: 1200px) {
-  .access {
+  .access, .account {
     padding-inline: 20vw;
     padding-top: 10vh;
   }
-  .access__login__form, .access__regist__form {
+  .access__Login__form, .account__box__FormProfile, .account__box__FormAccount, .access__Regist__form {
     gap: 1.5rem;
   }
-  .access__login__form label, .access__regist__form label {
+  .access__Login__form label, .account__box__FormProfile label, .account__box__FormAccount label, .access__Regist__form label {
     font-size: 1.5rem;
   }
-  .access__login__form input, .access__regist__form input {
+  .access__Login__form input, .account__box__FormProfile input, .account__box__FormAccount input, .access__Regist__form input {
     padding-top: 1.5rem;
+    font-size: 1.5rem;
+  }
+  .access__Login__form button, .account__box__FormProfile button, .account__box__FormAccount button, .access__Regist__form button {
+    font-size: 1.5rem;
+  }
+  .access__Login__form__msj, .access__Regist__form__msj {
     font-size: 1.5rem;
   }
   .labelIn {
@@ -1077,17 +1091,17 @@
   gap: 1rem;
   padding-block: 1rem;
 }
-.addProd__form__field {
+.addProd__form__field, .account__box__FormProfile__field, .account__box__FormAccount__field {
   grid-column: span 12;
   display: flex;
   flex-direction: column;
   font-weight: bolder;
   color: #694F04;
 }
-.addProd__form__field label {
+.addProd__form__field label, .account__box__FormProfile__field label, .account__box__FormAccount__field label {
   margin-bottom: 5px;
 }
-.addProd__form__field input, .addProd__form__field textarea {
+.addProd__form__field input, .account__box__FormProfile__field input, .account__box__FormAccount__field input, .addProd__form__field textarea, .account__box__FormProfile__field textarea, .account__box__FormAccount__field textarea {
   background-color: rgba(231, 177, 10, 0.2);
   border-radius: 1rem;
   padding: 0.5rem;
@@ -1095,20 +1109,20 @@
   font-weight: lighter;
   transition: all ease-in-out 0.3s;
 }
-.addProd__form__field input::-moz-placeholder, .addProd__form__field textarea::-moz-placeholder {
+.addProd__form__field input::-moz-placeholder, .account__box__FormProfile__field input::-moz-placeholder, .account__box__FormAccount__field input::-moz-placeholder, .addProd__form__field textarea::-moz-placeholder, .account__box__FormProfile__field textarea::-moz-placeholder, .account__box__FormAccount__field textarea::-moz-placeholder {
   opacity: 0.4;
 }
-.addProd__form__field input::placeholder, .addProd__form__field textarea::placeholder {
+.addProd__form__field input::placeholder, .account__box__FormProfile__field input::placeholder, .account__box__FormAccount__field input::placeholder, .addProd__form__field textarea::placeholder, .account__box__FormProfile__field textarea::placeholder, .account__box__FormAccount__field textarea::placeholder {
   opacity: 0.4;
 }
-.addProd__form__field input:focus, .addProd__form__field textarea:focus {
+.addProd__form__field input:focus, .account__box__FormProfile__field input:focus, .account__box__FormAccount__field input:focus, .addProd__form__field textarea:focus, .account__box__FormProfile__field textarea:focus, .account__box__FormAccount__field textarea:focus {
   outline: solid #E7B10A 2px;
   background-color: rgba(231, 177, 10, 0.5);
 }
-.addProd__form__btn {
+.addProd__form__btn, .account__box__FormProfile__btn, .account__box__FormAccount__btn {
   grid-column: span 12;
 }
-.addProd__form__btn button {
+.addProd__form__btn button, .account__box__FormProfile__btn button, .account__box__FormAccount__btn button {
   background-color: #694F04;
   font-size: 0.7rem;
   padding-inline: 0.5rem;
@@ -1122,16 +1136,16 @@
   transition: all ease-in-out 0.3s;
 }
 @media screen and (min-width: 1000px) {
-  .addProd__form__btn button {
+  .addProd__form__btn button, .account__box__FormProfile__btn button, .account__box__FormAccount__btn button {
     font-size: 1rem;
   }
 }
-.addProd__form__btn button:hover {
+.addProd__form__btn button:hover, .account__box__FormProfile__btn button:hover, .account__box__FormAccount__btn button:hover {
   box-shadow: 0 0 16px 0 rgba(231, 177, 10, 0.9);
   transform: translateY(-5px);
   background-color: rgba(231, 177, 10, 0.8) !important;
 }
-.addProd__form__btn button:disabled {
+.addProd__form__btn button:disabled, .account__box__FormProfile__btn button:disabled, .account__box__FormAccount__btn button:disabled {
   background-color: rgba(137, 129, 33, 0.6) !important;
 }
 .addProd__message {
@@ -1147,7 +1161,7 @@
 }
 
 @media screen and (min-width: 510px) {
-  .addProd__form__field {
+  .addProd__form__field, .account__box__FormProfile__field, .account__box__FormAccount__field {
     grid-column: span 6;
   }
 }
@@ -1157,10 +1171,10 @@
   }
 }
 @media screen and (min-width: 1000px) {
-  .addProd__form__field {
+  .addProd__form__field, .account__box__FormProfile__field, .account__box__FormAccount__field {
     font-size: 1.5rem;
   }
-  .addProd__form__btn > button {
+  .addProd__form__btn > button, .account__box__FormProfile__btn > button, .account__box__FormAccount__btn > button {
     font-size: 1.5rem !important;
   }
 }
@@ -1168,7 +1182,7 @@
   .addProd__form {
     padding-inline: 4rem;
   }
-  .addProd__form__btn {
+  .addProd__form__btn, .account__box__FormProfile__btn, .account__box__FormAccount__btn {
     justify-self: center;
     width: 50%;
   }
@@ -1304,6 +1318,110 @@
   .detail__info {
     padding-left: 2rem;
     font-size: 1.5rem;
+  }
+}
+.account {
+  flex-wrap: wrap;
+}
+.account__title {
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+@media screen and (min-width: 1000px) {
+  .account__title {
+    font-size: 2.5rem;
+  }
+}
+.account > * {
+  margin-bottom: 1rem;
+}
+.account__profile {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  place-items: center;
+}
+.account__profile img {
+  grid-column: span 2;
+  background-color: white;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  min-width: 100px;
+  max-width: 200px;
+  box-shadow: 0 0 16px -4px black;
+  margin-bottom: 1rem;
+}
+.account__profile__actions {
+  grid-column: span 2;
+}
+.account__profile__actions button {
+  background-color: #862B0D;
+  margin-bottom: 1rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.7rem;
+  color: #F7F1E5;
+  box-shadow: 0 0 5px 1px black;
+  transition: all ease-in-out 0.3s;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.account__profile__actions button:nth-child(1):hover {
+  transform: translateY(-5px);
+  box-shadow: 0 2px 7px 2px black;
+}
+.account__profile__actions button:nth-child(2):hover {
+  animation: beat infinite 0.5s;
+  background-color: rgba(134, 43, 13, 0.8);
+}
+.account__box h2 {
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  color: #898121;
+}
+@media screen and (min-width: 1000px) {
+  .account__box h2 {
+    font-size: 2.5rem;
+  }
+}
+.account__box__FormProfile__btn button:disabled, .account__box__FormAccount__btn button:disabled {
+  opacity: 0.5;
+}
+
+@keyframes beat {
+  0% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0 0 10px 1px red;
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+@media screen and (min-width: 600px) {
+  .account {
+    justify-content: center;
+  }
+  .account__profile {
+    flex-basis: 100%;
+  }
+  .account__profile__actions > button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  .account__box {
+    flex-basis: 45%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .account {
+    gap: 2rem;
   }
 }
 html {

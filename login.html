@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="src/styles/reset.css">
   <!------------------------------------------------------------------ font family lato -->
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="src/styles/styles.css">
   <title>AluraGeek</title>
 </head>
 <body>
@@ -38,93 +38,74 @@
         </button>
       </form>
     </nav>
-    <a class="menu__login" href="login.html"><img src="assets/user_search_fill.png" alt="login-icon">Login</a>
+    <div class="menu__login">
+      <a class="menu__login__btn" href="login.html"><img src="assets/user_search_fill.png" alt="login-icon">Login/SignIn</a>
+      <a class="menu__login__account" href="account.html"><img src="assets/user_search_fill.png" alt="login-icon"></a>
+    </div>
   </section>
-  <!-- -----------------------------------login and regist-->
+  <!-- -----------------------------------login and Regist-->
  <section class="access">
-  <div class="access__login">
+  <div class="access__Login">
     <h2>Acceder</h2>
-    <form class="access__login__form" name="form" data-form-login>
-      <div class="access__login__form__input">
-        <label data-login-label-email for="emailLogin">Email</label>
+    <form class="access__Login__form" name="Login" data-form-Login>
+      <div class="access__Login__form__input">
+        <label data-Login-label-email for="emailLogin">Email</label>
         <input
           type="email"
           name="emailLogin"
           id="emailLogin"
-          data-login-input-email
-          onfocus="labelIn('email','login')"
-          onblur="labelOut('email','login')"
-          onkeydown="btnStatus('login')"
-          onkeyup="btnStatus('login')"
-          
+          data-Login-input-email
         />
       </div>
-      <div class="access__login__form__input">
-        <label data-login-label-password for="passwordLogin">Password</label>
+      <div class="access__Login__form__input">
+        <label data-Login-label-password for="passwordLogin">Password</label>
         <input
           type="password"
           name="passwordLogin"
           id="passwordLogin"
-          data-login-input-password
-          onfocus="labelIn('password','login')"
-          onblur="labelOut('password','login')"
-          onkeydown="btnStatus('login')"
-          onkeyup="btnStatus('login')"
-          
+          data-Login-input-password
         />
       </div>
-      <button data-login-btn disabled type="submit" class="access__login__form__btn" onclick="validator(event)">
-        Enviar mensaje
+      <button data-Login-btn disabled type="submit" class="access__Login__form__btn">
+        Iniciar Sesión
       </button>
-      <p class="access__login__form__msj" data-login-msj></p>
+      <p class="access__Login__form__msj" data-Login-msj></p>
     </form>
   </div>
-  <div class="access__regist">
+  <div class="access__Regist">
     <h2>Registrar</h2>
-    <form class="access__regist__form" name="form" data-form-regist>
-      <div class="access__regist__form__input">
-        <label data-regist-label-nombre for="nombreRegist">Nombre</label>
+    <form class="access__Regist__form" name="Regist" data-form-Regist>
+      <div class="access__Regist__form__input">
+        <label data-Regist-label-displayName for="displayNameRegist">Nombre</label>
         <input
           type="text"
-          name="nombreRegist"
-          id="nombreRegist"
-          data-regist-input-nombre
-          onfocus="labelIn('nombre', 'regist')"
-          onblur="labelOut('nombre', 'regist')"
-          onkeydown="btnStatus('regist')"
-          onkeyup="btnStatus('regist')"
+          name="displayNameRegist"
+          id="displayNameRegist"
+          data-Regist-input-displayName
         />
       </div>
-      <div class="access__regist__form__input">
-        <label data-regist-label-email for="emailRegist">Email</label>
+      <div class="access__Regist__form__input">
+        <label data-Regist-label-email for="emailRegist">Email</label>
         <input
           type="email"
           name="emailRegist"
           id="emailRegist"
-          data-regist-input-email
-          onfocus="labelIn('email', 'regist')"
-          onblur="labelOut('email', 'regist')"
-          onkeydown="btnStatus('regist')"
-          onkeyup="btnStatus('regist')"
+          data-Regist-input-email
         />
       </div>
-      <div class="access__regist__form__input">
-        <label data-regist-label-password for="passwordRegist">Password</label>
+      <div class="access__Regist__form__input">
+        <label data-Regist-label-password for="passwordRegist">Password</label>
         <input
-          type="text"
+          type="password"
           name="passwordRegist"
           id="passwordRegist"
-          data-regist-input-password
-          onfocus="labelIn('password','regist')"
-          onblur="labelOut('password','regist')"
-          onkeydown="btnStatus('regist')"
-          onkeyup="btnStatus('regist')"
+          data-Regist-input-password
         />
       </div>
-      <button data-regist-btn disabled type="submit" class="access__regist__form__btn" onclick="validator(event)">
-        Enviar mensaje
+      <button data-Regist-btn disabled type="submit" class="access__Regist__form__btn">
+        Registrarse
       </button>
-      <p class="access__regist__form__msj" data-regist-msj></p>
+      <p class="access__Regist__form__msj" data-Regist-msj></p>
     </form>
   </div>
  </section>
@@ -185,6 +166,7 @@
       <img src="assets/up_icon.png" alt="up-icon">
     </a>
   </section>
-  <script src="animation.js"></script>
+  <script src="./src/animation.js"></script>
+  <script type="module" src="./dist/main.js"></script>
 </body>
 </html>

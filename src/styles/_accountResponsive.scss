@@ -1,0 +1,21 @@
+@media screen and (min-width:600px){
+  .account{
+    justify-content: center;
+    &__profile{
+      flex-basis: 100%;
+      &__actions>button{
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+    &__box{
+      flex-basis: 45%;
+    }
+  }
+}
+
+@media screen and (min-width:1200px){
+  .account{
+    gap: 2rem;
+  }
+}
