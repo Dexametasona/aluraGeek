@@ -21,7 +21,7 @@ const regex = {
 };
 
 export const sesionActions=()=>{
-  if(window.location.pathname=='/account.html'){
+  if(location.pathname.includes('/account.html')){
     const btnLogout=document.querySelector('[data-logout]');
     const btnDeleteuser=document.querySelector('[data-delete]');
     
@@ -60,7 +60,7 @@ export const sesionActions=()=>{
 }
 
 export const setProfileDataAccount=()=>{
-  if(window.location.pathname=='/account.html'){
+  if(window.location.pathname.includes('/account.html')){
     // const formProfile=document.querySelector('.acounr')
     const inputsProfile=document.querySelectorAll('.account__box input');
     const photoProfile=document.querySelector('[data-photoProfile]')
@@ -72,7 +72,7 @@ export const setProfileDataAccount=()=>{
 }
 
 export const updateDataAccount=()=>{
-  if(window.location.pathname=='/account.html'){
+  if(window.location.pathname.includes('/account.html')){
     const inputs=document.querySelectorAll('.account__box__FormProfile input')
     const btn=document.querySelector('[data-btnProfile]')
     const message = document.querySelector(".account__box__FormProfile__message p");

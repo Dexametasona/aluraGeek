@@ -2,7 +2,7 @@ import { labelOut, labelIn, validator, showPass } from "../animations/loginAnima
 import { signIn, registUser, setProfile} from "../service/serviceUser";
 
 export const setUpFormValidationsAndAnimations = () => {
-  if (window.location.pathname == "/login.html") {
+  if (window.location.pathname.includes("/login.html")) {
     const Inputs = document.querySelectorAll(
       "[data-form-Login] input, [data-form-Regist] input"
     );
@@ -19,7 +19,7 @@ export const setUpFormValidationsAndAnimations = () => {
 };
 
 export const accessAuth = () => {
-  if (window.location.pathname == "/login.html") {
+  if (location.pathname.includes("/login.html")) {
     const btnLogin = document.querySelector("[data-Login-btn]");
     const btnRegist = document.querySelector("[data-Regist-btn]");
 

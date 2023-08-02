@@ -3,7 +3,7 @@ import { deleteProduct, getOnlyProduct } from "../service/serviceProduct";
 import { getUser } from "../service/serviceUser";
 
 export const renderOnlyProduct = async () => {
-  if (window.location.pathname == "/productDetail.html") {
+  if (window.location.pathname.includes("/productDetail.html")) {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get("id");
     await getOnlyProduct(id).then(

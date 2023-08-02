@@ -31,7 +31,7 @@ function createCard(maskUrl, bgUrl, name, price, discount, id) {
 }
 
 export const renderProducts = async () => {
-  if (window.location.pathname == "/products.html") {
+  if (window.location.pathname.includes("/products.html")) {
     await getProducts().then((res) => {
       res.forEach(({ data: { name, photo, price,discount }, id }) => {
         createCard(photo.mask, photo.bg, name, price, discount, id);
