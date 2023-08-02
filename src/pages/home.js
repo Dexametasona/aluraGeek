@@ -18,7 +18,7 @@ const cardTemplate = (maskUrl, bgUrl, name, price, discount, id) => {
     </button>
   </div>
   <div class="stock__category__card__discount">
-    <span>-${discount * 100}%</span>
+    <span>-${Math.floor(discount * 100)}%</span>
   </div>`;
   return templateCard;
 };
@@ -39,11 +39,17 @@ export const renderStockProducts =async()=>{
     await getProducts().then(res => {
       const contenedorA = document.querySelector("[data-categoryA]");
       const contenedorB = document.querySelector("[data-categoryB");
-      res.forEach(({data:{ name, photo, price, discount, category },id}, i) => {
-        if (category == "politic" && i < 13) {
+      let lista=res;
+      shuffle(lista);
+      let counterA=0;
+      let counterB=0;
+      lista.forEach(({data:{ name, photo, price, discount, category },id}, i) => {
+        if (category == "politic" && counterA<6) {
           createCard(photo.mask, photo.bg, name, price, discount, contenedorA, id);
-        } else if (category == "history" && i < 13) {
+          counterA++
+        } else if (counterB<6) {
           createCard(photo.mask, photo.bg, name, price, discount, contenedorB, id);
+          counterB++;
         }
       });
     });
@@ -55,5 +61,11 @@ export const renderStockProducts =async()=>{
         window.location.href=url;
       })
     })
+  }
+}
+function shuffle(lista) {
+  for (let i = lista.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [lista[i], lista[j]] = [lista[j], lista[i]];
   }
 }
