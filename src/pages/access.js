@@ -31,7 +31,7 @@ export const accessAuth = () => {
       signIn(data)
         .then((userCredential) => {
           const user = userCredential.user;
-          window.location.href='/account.html'
+          window.location.href='./account.html'
         })
         .catch((error) => {
           switch (error.code) {
@@ -68,7 +68,7 @@ export const accessAuth = () => {
           const {displayName}=data
           const profile={displayName};
           setProfile(profile).then(()=>{
-            window.location.href='/account.html'
+            window.location.href='./account.html'
           })
           
           
