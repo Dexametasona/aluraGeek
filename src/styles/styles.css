@@ -1,4 +1,5 @@
 /* variables */
+@import url("https://fonts.googleapis.com/css2?family=Borel&display=swap");
 .promo {
   background: linear-gradient(to right, #E7B10A, #862B0D);
   padding-inline: 0.5rem;
@@ -1434,6 +1435,59 @@
 @media screen and (min-width: 1200px) {
   .account {
     gap: 2rem;
+  }
+}
+.about {
+  padding-block: 1rem;
+  font-family: "Borel", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.about__box {
+  display: flex;
+  flex-direction: column;
+}
+.about__box img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center -20vw;
+     object-position: center -20vw;
+  max-height: 40vw;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px -3px black;
+}
+.about__box__message {
+  padding-top: 1rem;
+  text-align: justify;
+  color: #694F04;
+}
+.about__box__message h2 {
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+@media screen and (min-width: 1000px) {
+  .about__box__message h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 530px) {
+  .about__box__message h2 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .about__box {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+  .about__box img {
+    -o-object-position: center;
+       object-position: center;
+  }
+  .about__box__message {
+    align-self: flex-start;
   }
 }
 html {

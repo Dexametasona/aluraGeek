@@ -21,9 +21,9 @@ const regex = {
 export function validator(id, form) {
   const msjbox = document.querySelector(`[data-${form}-msj]`);
   const input = document.querySelector(`[data-${form}-input-${id}]`);
-  if(id=='password'){
-    regex.passwordRepeat.reg=new RegExp(`^${input.value}$`);
-    validator('passwordRepeat',form)
+  if (id == "password" && form=="Regist") {
+    regex.passwordRepeat.reg = new RegExp(`^${input.value}$`);
+    validator("passwordRepeat", form);
   }
   if (!regex[id].reg.test(input.value)) {
     msjbox.innerHTML = regex[id].msj;
@@ -67,10 +67,9 @@ export function labelOut(id, form) {
 }
 
 export function showPass(btn, input) {
-  let eyeStatus=input.type=='text';
-  eyeStatus=!eyeStatus;
+  let eyeStatus = input.type == "text";
+  eyeStatus = !eyeStatus;
   const eye = btn.querySelector("img");
   eye.src = `assets/eye_${eyeStatus ? "open" : "close"}.png`;
   input.type = eyeStatus ? "text" : "password";
-
 }

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
+.about{
+  padding-block: 1rem;
+  font-family: 'Borel', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  &__box{
+    display: flex;
+    flex-direction: column; 
+    img{
+      object-fit: cover;
+      object-position: center -20vw;
+      max-height: 40vw;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px -3px black;
+    }
+    &__message{
+      padding-top: 1rem;
+      h2{
+        @include titleStyle;
+      }
+      text-align: justify;
+      color: $colPrice;
+    }
+  }
+}
+
+@media screen and (min-width:530px) {
+  .about__box{
+    &__message{
+      h2{
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+@media screen and (min-width:1000px){
+  .about{
+    &__box{
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+      img{
+        object-position: center;
+      }
+      &__message{
+        align-self: flex-start;
+      }
+    }
+  }
+}
