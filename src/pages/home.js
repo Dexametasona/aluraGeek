@@ -35,7 +35,7 @@ function createCard(maskUrl, bgUrl, name, price, discount, contenedor, id) {
 }
 
 export const renderStockProducts =async()=>{
-  if(window.location.pathname=="/index.html"){
+  if(window.location.pathname=="./index.html"){
     await getProducts().then(res => {
       const contenedorA = document.querySelector("[data-categoryA]");
       const contenedorB = document.querySelector("[data-categoryB");
