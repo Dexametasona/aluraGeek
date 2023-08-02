@@ -7,6 +7,9 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./service/firebaseInit";
 import { sesionActions, setProfileDataAccount, updateDataAccount} from "./pages/account";
 
+if(location.pathname=='/aluraGeek'){
+  location.href='/aluraGeek/index.html';
+}
 renderProducts();
 renderStockProducts();
 renderOnlyProduct();

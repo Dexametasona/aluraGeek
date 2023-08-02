@@ -116,7 +116,7 @@ function deleteProd(button, id) {
       }).then(res=>{
         if(res.isConfirmed){
           deleteProduct(id).then(() => {
-            window.location.href = "/index.html";
+            window.location.href = "/aluraGeek/index.html";
           });
         }
       })

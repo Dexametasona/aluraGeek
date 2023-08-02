@@ -75,7 +75,7 @@ export const newProd = async () => {
             messageBox.innerHTML = "Producto actualizado exitosamente. Redirigiendo en 3s...";
             setTimeout(() => {
               messageBox.innerHTML = "";
-              window.location.href='/products.html'
+              window.location.href='/aluraGeek/products.html'
             }, 3000);
           })
         }

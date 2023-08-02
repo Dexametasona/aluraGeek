@@ -35,7 +35,7 @@ export const sesionActions=()=>{
         if(res.isConfirmed){
           logOut().then(()=>{
             console.log("Sesión cerrada con éxito")
-            window.location.href='./login.html';
+            window.location.href='/aluraGeek/login.html';
           })
         }
       })
@@ -51,7 +51,7 @@ export const sesionActions=()=>{
       }).then(res=>{
         if(res.isConfirmed){
           deleteUserService().then(()=>{
-            window.location.href='./login.html';
+            window.location.href='/aluraGeek/login.html';
           });
         }
       })
