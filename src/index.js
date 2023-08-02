@@ -6,7 +6,7 @@ import { accessAuth, eyeBtnAction, setUpFormValidationsAndAnimations } from "./p
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./service/firebaseInit";
 import { sesionActions, setProfileDataAccount, updateDataAccount} from "./pages/account";
-
+console.log(location.pathname);
 if(location.pathname=='/aluraGeek'){
   location.href='/aluraGeek/index.html';
 }
