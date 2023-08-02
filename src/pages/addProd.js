@@ -5,9 +5,11 @@ import {
   updateProduct,
 } from "../service/serviceProduct";
 import { getUser } from "../service/serviceUser";
+import { formAnimationANdValidation } from "../animations/addProdAnimations";
 
 export const newProd = async () => {
   if (window.location.pathname == "/addProducts.html") {
+    formAnimationANdValidation();
     const title = document.querySelector("[data-title]");
     title.innerHTML = hasParam() ? "Actualizar Producto" : "Registrar producto";
 
