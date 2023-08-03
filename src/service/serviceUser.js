@@ -27,6 +27,6 @@ export function getUser(){
   return user; 
 }
 
-export function emailVerification(){
-  return sendEmailVerification(auth.currentUser);
+export function emailVerification(user){
+  return sendEmailVerification(user);
 }

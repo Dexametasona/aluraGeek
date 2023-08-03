@@ -4,7 +4,7 @@ import {
   validator,
   showPass,
 } from "../animations/loginAnimation";
-import { signIn, registUser, setProfile, emailVerification } from "../service/serviceUser";
+import { signIn, registUser, setProfile, emailVerification, getUser } from "../service/serviceUser";
 
 export const setUpFormValidationsAndAnimations = () => {
   if (window.location.pathname.includes("/login.html")) {
@@ -39,9 +39,12 @@ export const accessAuth = () => {
           if(user){
             window.location.href = "/aluraGeek/account.html";
           }
+          else{
+            throw new Error("unverified")
+          }
         })
         .catch((error) => {
-          switch (error.code) {
+          switch (error.code || error.message) {
             case "auth/wrong-password":
               messageBox.innerHTML = "Contraseña incorrecta.";
               break;
@@ -49,14 +52,17 @@ export const accessAuth = () => {
             case "auth/user-not-found":
               messageBox.innerHTML = "Correo no encontrado.";
               break;
-
+            case "unverified":
+              messageBox.innerHTML='Usuario no verificado.'
+              break;
             default:
               messageBox.innerHTML =
-                "Error atípico, envíanos un correo con la caputra por favor.";
+                "Error atípico, envíanos un correo con la captura por favor.";
               break;
           }
-          cleanMessage(messageBox);
         });
+
+        cleanMessage(messageBox);
     });
 
     btnRegist.addEventListener("click", async (event) => {
@@ -67,16 +73,16 @@ export const accessAuth = () => {
 
       try {
         await registUser(data);
+        const user=getUser();
         cleanFieldInputs("Regist");
-        messageBox.innerHTML = "Nuevo usuario registrado con éxito.";
+        messageBox.innerHTML = "Active su cuenta con el link de verificación enviado a su correo.";
         messageBox.style.color = "green";
         const { displayName } = data;
         const profile = { displayName };
         
         await setProfile(profile)
         console.log("perfil actualizado");
-
-        await emailVerification()
+        await emailVerification(user)
         console.log('email enviado');
 
       } catch (error) {

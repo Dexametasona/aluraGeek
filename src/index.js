@@ -34,12 +34,6 @@ onAuthStateChanged(auth, (user) => {
   btnAccount.innerHTML = userVerified? user.displayName:"";
   if(!userVerified && user){
     logOut();
-    const messageBox = document.querySelector("[data-Login-msj]");
-    messageBox.innerHTML="Usuario no verificado."
-    setTimeout(() => {
-      messageBox.innerHTML = "";
-      messageBox.style.color = "#862B0D";
-    }, 3000);
   }
   if(userVerified) setProfileDataAccount();
 });
