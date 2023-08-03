@@ -23,6 +23,7 @@ updateDataAccount();
 eyeBtnAction();
 renderSearch();
 
+
 onAuthStateChanged(auth, (user) => {
   const btnLogin = document.querySelector(".menu__login__btn");
   const btnAccount = document.querySelector(".menu__login__account");

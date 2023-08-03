@@ -990,7 +990,9 @@
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.7s;
+  opacity: 0;
+  scale: 25%;
 }
 .product__box__card__photo {
   position: relative;
@@ -1098,6 +1100,11 @@
     opacity: 1;
   }
 }
+.appear {
+  opacity: 1;
+  scale: 100%;
+}
+
 @media screen and (min-width: 500px) {
   .product__box__card {
     font-size: 1rem;

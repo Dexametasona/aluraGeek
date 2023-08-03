@@ -1,3 +1,4 @@
+import { appearProductAnimation } from "../animations/prodAnimation";
 import { getProducts } from "../service/serviceProduct";
 
 const cardTemplate = (maskUrl, bgUrl, name, price, discount, id) => {
@@ -36,6 +37,8 @@ export const renderProducts = async () => {
       res.forEach(({ data: { name, photo, price,discount }, id }) => {
         createCard(photo.mask, photo.bg, name, price, discount, id);
       });
+      appearProductAnimation();
+      scrollBy(0,50)
     });
 
     const btns=document.querySelectorAll('.product__box__card__actions__detail')
