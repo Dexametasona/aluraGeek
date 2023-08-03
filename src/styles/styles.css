@@ -512,6 +512,7 @@
   }
 }
 .contact__info__list {
+  overflow-x: hidden;
   text-align: start;
 }
 .contact__info__list li {
