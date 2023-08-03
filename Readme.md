@@ -1,4 +1,4 @@
-![Eccomerce](https://i.ibb.co/Wpgtg1b/eccomerce.jpg "Eccomerce "Eccomerce")
+![Eccomerce](https://i.ibb.co/Wpgtg1b/eccomerce.jpg)
 # **Alura geek eccomerce challenge**
 ## Este proyecto es un eccomerce de productos geek.
 Tendra las páginas:
