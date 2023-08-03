@@ -108,6 +108,12 @@
             padding-left: 0.5rem;
           }
         }
+        &__results{
+          font-size: 1rem;
+          img{
+            height: 2rem;
+          }
+        }
       }
     }
   }
@@ -172,6 +178,13 @@
           top:calc(50% - 1rem);
           img{
             height: 2rem;
+          }
+        }
+        &__results{
+          font-size: 1.2rem;
+          padding-inline: 1rem;
+          img{
+            height: 3rem;
           }
         }
       }

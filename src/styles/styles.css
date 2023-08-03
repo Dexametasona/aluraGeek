@@ -114,6 +114,32 @@
 .menu__nav__search button:hover {
   background-color: #F7F1E5;
 }
+.menu__nav__search__results {
+  font-size: 0.5rem;
+  position: absolute;
+  background-color: rgba(247, 241, 229, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  top: 110%;
+  left: 10%;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  border-radius: 0.5rem;
+  max-height: 0px;
+  overflow: hidden;
+}
+.menu__nav__search__results__card {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px #694F04 solid;
+  transition: all ease-in-out 0.3s;
+}
+.menu__nav__search__results__card img {
+  aspect-ratio: 1/1;
+}
+.menu__nav__search__results__card:hover {
+  background: linear-gradient(to right, #E7B10A, rgba(105, 79, 4, 0.6));
+}
 .menu__login {
   display: flex;
 }
@@ -693,6 +719,12 @@
   .menu__nav__search input::placeholder {
     padding-left: 0.5rem;
   }
+  .menu__nav__search__results {
+    font-size: 1rem;
+  }
+  .menu__nav__search__results img {
+    height: 2rem;
+  }
   .title__slider {
     height: 400px;
   }
@@ -755,6 +787,13 @@
   }
   .menu__nav__search button img {
     height: 2rem;
+  }
+  .menu__nav__search__results {
+    font-size: 1.2rem;
+    padding-inline: 1rem;
+  }
+  .menu__nav__search__results img {
+    height: 3rem;
   }
   .menu__login > a {
     padding-block: 0.7rem;

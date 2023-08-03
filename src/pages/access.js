@@ -1,5 +1,10 @@
-import { labelOut, labelIn, validator, showPass } from "../animations/loginAnimation";
-import { signIn, registUser, setProfile} from "../service/serviceUser";
+import {
+  labelOut,
+  labelIn,
+  validator,
+  showPass,
+} from "../animations/loginAnimation";
+import { signIn, registUser, setProfile, emailVerification } from "../service/serviceUser";
 
 export const setUpFormValidationsAndAnimations = () => {
   if (window.location.pathname.includes("/login.html")) {
@@ -30,8 +35,10 @@ export const accessAuth = () => {
 
       signIn(data)
         .then((userCredential) => {
-          const user = userCredential.user;
-          window.location.href='/aluraGeek/account.html'
+          const user = userCredential.user.emailVerified;
+          if(user){
+            window.location.href = "/aluraGeek/account.html";
+          }
         })
         .catch((error) => {
           switch (error.code) {
@@ -52,39 +59,38 @@ export const accessAuth = () => {
         });
     });
 
-    btnRegist.addEventListener("click", (event) => {
+    btnRegist.addEventListener("click", async (event) => {
       const messageBox = document.querySelector("[data-Regist-msj]");
 
       event.preventDefault();
       const data = dataInput("Regist");
 
-      registUser(data)
-        .then((userCredential) => {
-          // Signed in
-          const user = userCredential.user;
-          cleanFieldInputs("Regist");
-          messageBox.innerHTML="Nuevo usuario registrado con éxito."
-          messageBox.style.color='green';
-          const {displayName}=data
-          const profile={displayName};
-          setProfile(profile).then(()=>{
-            window.location.href='/aluraGeek/account.html'
-          })
-          
-          
-        })
-        .catch((error) => {
-          switch (error.code) {
-            case "auth/email-already-in-use":
-              messageBox.innerHTML="Registro Fallido, correo en uso.";
-              break;
+      try {
+        await registUser(data);
+        cleanFieldInputs("Regist");
+        messageBox.innerHTML = "Nuevo usuario registrado con éxito.";
+        messageBox.style.color = "green";
+        const { displayName } = data;
+        const profile = { displayName };
+        
+        await setProfile(profile)
+        console.log("perfil actualizado");
 
-            default:
-              messageBox.innerHTML="Error atípico, envíanos un correo con la caputra por favor";
-              break;
-          }
-          cleanMessage(messageBox);
-        });
+        await emailVerification()
+        console.log('email enviado');
+
+      } catch (error) {
+        switch (error.code) {
+          case "auth/email-already-in-use":
+            messageBox.innerHTML = "Registro Fallido, correo en uso.";
+            break;
+          default:
+            messageBox.innerHTML =
+              "Error atípico, envíanos un correo con la caputra por favor";
+            break;
+        }
+        cleanMessage(messageBox);
+      }
     });
   }
 };
@@ -94,7 +100,7 @@ function dataInput(formName) {
   const inputs = form.querySelectorAll("input");
   let data = {};
   inputs.forEach((input) => {
-    const fieldName=input.id.replace(formName,"");
+    const fieldName = input.id.replace(formName, "");
     data[fieldName] = input.value;
   });
   return data;
@@ -107,22 +113,22 @@ function cleanFieldInputs(formName) {
     input.value = "";
   });
 }
-function cleanMessage(messageBox){
-  setTimeout(()=>{
-    messageBox.innerHTML="";
-    messageBox.style.color="#862B0D";
+function cleanMessage(messageBox) {
+  setTimeout(() => {
+    messageBox.innerHTML = "";
+    messageBox.style.color = "#862B0D";
   }, 3000);
 }
 
-export const eyeBtnAction=()=>{
-  const btns=document.querySelectorAll('.access__Regist__form__input__eye');
+export const eyeBtnAction = () => {
+  const btns = document.querySelectorAll(".access__Regist__form__input__eye");
 
-  btns.forEach(btn=>{
-    btn.addEventListener('click', (event)=>{
+  btns.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
       event.preventDefault();
-      const container=btn.parentNode;
-      const input=container.querySelector('input');
-      showPass(btn,input);
-    })
-  })
-}
+      const container = btn.parentNode;
+      const input = container.querySelector("input");
+      showPass(btn, input);
+    });
+  });
+};

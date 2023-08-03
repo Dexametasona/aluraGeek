@@ -1,4 +1,4 @@
-  import { createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, updateProfile, deleteUser } from "firebase/auth";
+import { createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, updateProfile, deleteUser, sendEmailVerification } from "firebase/auth";
 import { auth } from "./firebaseInit";
 
 export function registUser({ email, password }) {
@@ -25,4 +25,8 @@ export function deleteUserService(){
 export function getUser(){
   const user=auth.currentUser;
   return user; 
+}
+
+export function emailVerification(){
+  return sendEmailVerification(auth.currentUser);
 }
