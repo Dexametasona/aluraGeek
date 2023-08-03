@@ -13,8 +13,8 @@ Tendra las páginas:
 El CRUD se realizo con **firebase database**, el registro y autenticacion de usuarios se realizo con **firebase auth**, las notificaciones con **sweetAlert2**, las animaciones y patrones de diseño se realizon con **BEM, Sass y Javascritp** y finalmente **Webpack** para administrar las importaciones y exportaciones de javascript.
 ### &copy;Desarrollado por Alexander Machicado G.
 Vistas
-![Eccomerce](https://i.ibb.co/Wpgtg1b/eccomerce.jpg)
-
+![](https://i.ibb.co/56R7T3J/eccomerce.jpg)
+             
 ------------
 
 
@@ -31,5 +31,3 @@ Vistas
 ![](https://i.ibb.co/VwnXhd3/eccomerce.jpg)
 
 ------------
-
-![](https://i.ibb.co/JvFXXM8/mobile.png)
