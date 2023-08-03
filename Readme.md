@@ -1,4 +1,4 @@
-![Eccomerce](https://i.ibb.co/Wpgtg1b/eccomerce.jpg)
+
 # **Alura geek eccomerce challenge**
 ## Este proyecto es un eccomerce de productos geek.
 Tendra las páginas:
@@ -13,6 +13,11 @@ Tendra las páginas:
 El CRUD se realizo con **firebase database**, el registro y autenticacion de usuarios se realizo con **firebase auth**, las notificaciones con **sweetAlert2**, las animaciones y patrones de diseño se realizon con **BEM, Sass y Javascritp** y finalmente **Webpack** para administrar las importaciones y exportaciones de javascript.
 ### &copy;Desarrollado por Alexander Machicado G.
 Vistas
+![Eccomerce](https://i.ibb.co/Wpgtg1b/eccomerce.jpg)
+
+------------
+
+
 ![](https://i.ibb.co/1LBWt63/eccomerce.jpg)
 
 ------------
